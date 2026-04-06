@@ -8,6 +8,11 @@ import {
   Clock,
   Code,
   ArrowRight,
+  Flame,
+  Bell,
+  Leaf,
+  Sun,
+  Siren,
 } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -21,6 +26,11 @@ const iconMap: Record<string, React.ReactNode> = {
   Bot: <Bot className="w-6 h-6" />,
   Clock: <Clock className="w-6 h-6" />,
   Code: <Code className="w-6 h-6" />,
+  Flame: <Flame className="w-6 h-6" />,
+  Bell: <Bell className="w-6 h-6" />,
+  Leaf: <Leaf className="w-6 h-6" />,
+  Sun: <Sun className="w-6 h-6" />,
+  Siren: <Siren className="w-6 h-6" />,
 };
 
 export default function MarketplacePage() {
@@ -55,9 +65,20 @@ export default function MarketplacePage() {
                   <div className="w-12 h-12 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400 mb-4">
                     {iconMap[service.icon]}
                   </div>
-                  <h3 className="text-lg font-semibold text-white">
-                    {service.title}
-                  </h3>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg font-semibold text-white">
+                      {service.title}
+                    </h3>
+                    {service.badge && (
+                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                        service.badge === 'New'
+                          ? 'bg-emerald-500/20 text-emerald-400'
+                          : 'bg-brand-500/20 text-brand-400'
+                      }`}>
+                        {service.badge}
+                      </span>
+                    )}
+                  </div>
                   <p className="mt-2 text-sm text-navy-300 leading-relaxed flex-1">
                     {service.description}
                   </p>

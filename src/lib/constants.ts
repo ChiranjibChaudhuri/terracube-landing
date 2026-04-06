@@ -21,6 +21,36 @@ export const FEATURES = [
       "Building energy estimations derived from climate data, heating/cooling degree days, and envelope analysis.",
   },
   {
+    icon: "Flame",
+    title: "Wildfire Risk",
+    description:
+      "Dynamic wildfire scoring using fire history, vegetation dryness, drought stress, and terrain slope analysis.",
+  },
+  {
+    icon: "Leaf",
+    title: "ESG Scoring",
+    description:
+      "Property-level ESG ratings covering green space, air quality, land use diversity, and deforestation risk.",
+  },
+  {
+    icon: "Sun",
+    title: "Solar Potential",
+    description:
+      "Rooftop solar viability with irradiance mapping, optimal tilt/azimuth, shading analysis, and ROI projections.",
+  },
+  {
+    icon: "Bell",
+    title: "Parametric Insurance",
+    description:
+      "Satellite-based insurance triggers for wind, flood, heat, and freeze — instant, objective payouts.",
+  },
+  {
+    icon: "Siren",
+    title: "Disaster Assessment",
+    description:
+      "Rapid post-disaster damage mapping via SAR change detection before and after catastrophic events.",
+  },
+  {
     icon: "Brain",
     title: "AI-Powered Insights",
     description:
@@ -43,6 +73,12 @@ export const FEATURES = [
     title: "Portfolio Management",
     description:
       "Unified dashboard for managing property portfolios with aggregated risk scores and performance metrics.",
+  },
+  {
+    icon: "Code",
+    title: "API & Webhooks",
+    description:
+      "Full REST API for integrating Earth intelligence data into your existing systems and workflows.",
   },
 ];
 
@@ -165,6 +201,7 @@ export const MARKETPLACE_SERVICES = [
     description:
       "Wind, flood, freeze-thaw, and heat risk analysis with continuous satellite monitoring and alerting.",
     tags: ["Wind", "Flood", "Freeze-Thaw", "Heat"],
+    badge: "Core",
   },
   {
     icon: "Thermometer",
@@ -172,6 +209,47 @@ export const MARKETPLACE_SERVICES = [
     description:
       "Heating and cooling degree day calculations, building energy modeling, and efficiency scoring.",
     tags: ["HDD", "CDD", "Efficiency"],
+    badge: "Core",
+  },
+  {
+    icon: "Flame",
+    title: "Wildfire Risk Scoring",
+    description:
+      "Dynamic wildfire risk assessment using MODIS fire history, vegetation dryness, drought stress, and terrain analysis.",
+    tags: ["MODIS", "ERA5", "SAR"],
+    badge: "New",
+  },
+  {
+    icon: "Bell",
+    title: "Parametric Insurance",
+    description:
+      "Objective, satellite-based insurance triggers for wind, flood, heat, and freeze events. No claims adjuster needed.",
+    tags: ["Wind", "Flood", "Heat", "Freeze"],
+    badge: "New",
+  },
+  {
+    icon: "Leaf",
+    title: "ESG Property Scoring",
+    description:
+      "Environmental, Social, and Governance scoring for properties — green space, air quality, land use, and deforestation risk.",
+    tags: ["ESG", "NDVI", "NO2", "Sentinel-5P"],
+    badge: "New",
+  },
+  {
+    icon: "Sun",
+    title: "Solar PV Potential",
+    description:
+      "Rooftop solar viability assessment — irradiance mapping, optimal tilt/azimuth, shading risk, and ROI projections.",
+    tags: ["ERA5", "DEM", "Solar"],
+    badge: "New",
+  },
+  {
+    icon: "Siren",
+    title: "Post-Disaster Assessment",
+    description:
+      "Rapid damage assessment via SAR change detection — before/after analysis for floods, hurricanes, wildfires, and earthquakes.",
+    tags: ["SAR", "Sentinel-1", "Damage"],
+    badge: "New",
   },
   {
     icon: "BarChart3",

@@ -10,6 +10,12 @@ import {
   Layers,
   Star,
   ArrowRight,
+  Flame,
+  Leaf,
+  Sun,
+  Bell,
+  Siren,
+  Code,
 } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -28,6 +34,12 @@ const iconMap: Record<string, React.ReactNode> = {
   Clock: <Clock className="w-6 h-6" />,
   Satellite: <Satellite className="w-6 h-6" />,
   Layers: <Layers className="w-6 h-6" />,
+ Flame: <Flame className="w-6 h-6" />,
+  Leaf: <Leaf className="w-6 h-6" />,
+  Sun: <Sun className="w-6 h-6" />,
+  Bell: <Bell className="w-6 h-6" />,
+  Siren: <Siren className="w-6 h-6" />,
+  Code: <Code className="w-6 h-6" />,
 };
 
 export default function Home() {
