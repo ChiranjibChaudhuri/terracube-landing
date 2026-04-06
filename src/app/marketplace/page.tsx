@@ -13,6 +13,7 @@ import {
   Leaf,
   Sun,
   Siren,
+  TreePine,
 } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -31,6 +32,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Leaf: <Leaf className="w-6 h-6" />,
   Sun: <Sun className="w-6 h-6" />,
   Siren: <Siren className="w-6 h-6" />,
+  TreePine: <TreePine className="w-6 h-6" />,
 };
 
 export default function MarketplacePage() {

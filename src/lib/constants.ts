@@ -252,6 +252,14 @@ export const MARKETPLACE_SERVICES = [
     badge: "New",
   },
   {
+    icon: "TreePine",
+    title: "Carbon Credit Verification",
+    description:
+      "Verify carbon offset and reforestation projects — forest integrity, biomass, NDVI trends, carbon stock estimation, and annual sequestration rates.",
+    tags: ["GEDI", "Hansen", "MODIS NPP"],
+    badge: "New",
+  },
+  {
     icon: "BarChart3",
     title: "Portfolio Analytics",
     description:
