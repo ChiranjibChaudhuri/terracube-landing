@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import {
   Shield,
@@ -44,13 +45,34 @@ const iconMap: Record<string, React.ReactNode> = {
   Code: <Code className="w-6 h-6" />,
 };
 
+const iconMapLg: Record<string, React.ReactNode> = {
+  Shield: <Shield className="w-8 h-8" />,
+  Zap: <Zap className="w-8 h-8" />,
+  Brain: <Brain className="w-8 h-8" />,
+  Clock: <Clock className="w-8 h-8" />,
+  Satellite: <Satellite className="w-8 h-8" />,
+  Layers: <Layers className="w-8 h-8" />,
+  Flame: <Flame className="w-8 h-8" />,
+  Leaf: <Leaf className="w-8 h-8" />,
+  Sun: <Sun className="w-8 h-8" />,
+  Bell: <Bell className="w-8 h-8" />,
+  Siren: <Siren className="w-8 h-8" />,
+  TreePine: <TreePine className="w-8 h-8" />,
+  Code: <Code className="w-8 h-8" />,
+};
+
 export default function Home() {
+  const [showMoreFeatures, setShowMoreFeatures] = useState(false);
+
+  const topFeatures = FEATURES.slice(0, 4);
+  const moreFeatures = FEATURES.slice(4);
+
   return (
     <>
       <Navbar />
 
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      <section id="main-content" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
         {/* Animated gradient orb */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(65,182,196,0.2)_0%,rgba(46,154,173,0.1)_40%,transparent_70%)] animate-orb-float blur-3xl pointer-events-none" />
         <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(35,101,119,0.15)_0%,transparent_70%)] animate-glow-pulse blur-2xl pointer-events-none" />
@@ -118,17 +140,59 @@ export default function Home() {
             </p>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {FEATURES.map((feature, i) => (
-              <AnimatedSection key={feature.title} delay={i * 0.08}>
-                <div className="glass rounded-xl p-6 h-full hover:scale-[1.02] hover:glow-brand transition-all duration-300">
-                  <div className="w-12 h-12 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400 mb-4">
-                    {iconMap[feature.icon]}
+          {/* Top 4 featured — larger 2-column cards */}
+          <div className="grid md:grid-cols-2 gap-8">
+            {topFeatures.map((feature, i) => (
+              <AnimatedSection key={feature.title} delay={i * 0.1}>
+                <div className="glass rounded-xl p-8 h-full hover:scale-[1.02] hover:glow-brand transition-all duration-300 border border-brand-500/10">
+                  <div className="w-14 h-14 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400 mb-5">
+                    {iconMapLg[feature.icon]}
                   </div>
-                  <h3 className="text-lg font-semibold text-white">
+                  <h3 className="text-xl font-semibold text-white">
                     {feature.title}
                   </h3>
-                  <p className="mt-2 text-sm text-navy-300 leading-relaxed">
+                  <p className="mt-3 text-base text-navy-300 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          {/* Toggle for remaining features */}
+          <div className="mt-10 text-center">
+            <button
+              onClick={() => setShowMoreFeatures((prev) => !prev)}
+              className="inline-flex items-center gap-2 rounded-lg border border-brand-500/40 px-6 py-3 text-sm font-medium text-brand-400 hover:bg-brand-500/10 transition-colors"
+            >
+              {showMoreFeatures ? "Show fewer features" : "Show more features"}
+              <ArrowRight
+                size={16}
+                className={`transition-transform duration-300 ${
+                  showMoreFeatures ? "rotate-[-90deg]" : "rotate-90"
+                }`}
+              />
+            </button>
+          </div>
+
+          {/* Remaining 8 features — smaller 4-column cards, collapsible */}
+          <div
+            className={`grid grid-cols-2 lg:grid-cols-4 gap-4 overflow-hidden transition-all duration-500 ease-in-out ${
+              showMoreFeatures
+                ? "mt-10 max-h-[2000px] opacity-100"
+                : "max-h-0 opacity-0"
+            }`}
+          >
+            {moreFeatures.map((feature, i) => (
+              <AnimatedSection key={feature.title} delay={i * 0.06}>
+                <div className="glass rounded-xl p-5 h-full hover:scale-[1.02] hover:glow-brand transition-all duration-300">
+                  <div className="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400 mb-3">
+                    {iconMap[feature.icon]}
+                  </div>
+                  <h3 className="text-sm font-semibold text-white">
+                    {feature.title}
+                  </h3>
+                  <p className="mt-1.5 text-xs text-navy-300 leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
@@ -187,14 +251,12 @@ export default function Home() {
                 monitoring, energy estimation, AI agents, workflow automation,
                 and more — all in one integrated platform.
               </p>
-              <button
-                onClick={() =>
-                  window.open("http://localhost:3000", "_blank")
-                }
+              <Link
+                href={process.env.NEXT_PUBLIC_APP_URL || "/marketplace"}
                 className="mt-8 inline-flex items-center gap-2 rounded-lg bg-brand-500 px-6 py-3 text-base font-medium text-white hover:bg-brand-600 transition-colors"
               >
                 Launch Vault Neo <ArrowRight size={18} />
-              </button>
+              </Link>
             </div>
           </AnimatedSection>
         </div>
@@ -252,7 +314,7 @@ export default function Home() {
                 intelligence to make smarter decisions.
               </p>
               <Link
-                href="/pricing"
+                href="/pricing#signup"
                 className="mt-8 inline-flex items-center gap-2 rounded-lg bg-brand-500 px-8 py-3 text-base font-medium text-white hover:bg-brand-600 transition-colors"
               >
                 Get Started Free <ArrowRight size={18} />

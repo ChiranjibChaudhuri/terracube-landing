@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   Shield,
   Thermometer,
@@ -113,14 +114,12 @@ export default function MarketplacePage() {
                 Launch Vault Neo to access all services, manage your properties,
                 and start generating insights.
               </p>
-              <button
-                onClick={() =>
-                  window.open("http://localhost:3000", "_blank")
-                }
+              <Link
+                href={process.env.NEXT_PUBLIC_APP_URL || "/marketplace"}
                 className="mt-8 inline-flex items-center gap-2 rounded-lg bg-brand-500 px-8 py-3 text-base font-medium text-white hover:bg-brand-600 transition-colors"
               >
                 Launch Vault Neo <ArrowRight size={18} />
-              </button>
+              </Link>
             </div>
           </AnimatedSection>
         </div>
