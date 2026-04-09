@@ -102,7 +102,7 @@ export default function PricingPage() {
       </section>
 
       {/* Feature comparison */}
-      <section className="py-24">
+      <section id="signup" className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12">
             <h2 className="text-2xl font-bold text-white">

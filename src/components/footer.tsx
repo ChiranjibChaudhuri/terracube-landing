@@ -5,7 +5,7 @@ const footerLinks = [
   { label: "Marketplace", href: "/marketplace" },
   { label: "About", href: "/about" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Docs", href: "#" },
+  { label: "Docs", href: "/about" },
 ];
 
 export default function Footer() {

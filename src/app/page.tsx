@@ -73,9 +73,9 @@ export default function Home() {
 
       {/* Hero */}
       <section id="main-content" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        {/* Animated gradient orb */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[radial-gradient(circle,rgba(65,182,196,0.2)_0%,rgba(46,154,173,0.1)_40%,transparent_70%)] animate-orb-float blur-3xl pointer-events-none" />
-        <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(35,101,119,0.15)_0%,transparent_70%)] animate-glow-pulse blur-2xl pointer-events-none" />
+        {/* Animated gradient orb — max-w-full prevents mobile overflow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] max-w-full h-[600px] rounded-full bg-[radial-gradient(circle,rgba(65,182,196,0.2)_0%,rgba(46,154,173,0.1)_40%,transparent_70%)] animate-orb-float blur-3xl pointer-events-none" />
+        <div className="absolute top-1/3 right-1/4 w-[400px] max-w-full h-[400px] rounded-full bg-[radial-gradient(circle,rgba(35,101,119,0.15)_0%,transparent_70%)] animate-glow-pulse blur-2xl pointer-events-none" />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>

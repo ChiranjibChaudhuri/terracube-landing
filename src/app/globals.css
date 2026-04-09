@@ -101,6 +101,13 @@ body {
 }
 
 /* Accessibility: reduce motion for users who prefer it */
+/* Focus-visible styles for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--color-brand-400);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
