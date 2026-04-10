@@ -85,29 +85,29 @@ export const FEATURES = [
 export const HOW_IT_WORKS = [
   {
     step: 1,
-    title: "Add Properties",
+    title: "Upload Your Portfolio",
     description:
-      "Upload addresses or connect your existing data sources to get started in minutes.",
+      "Drop in addresses, parcel IDs, or connect your property management system. We geocode and match every asset to satellite coverage automatically.",
   },
   {
     step: 2,
-    title: "Get Analysis",
+    title: "Run Environmental Underwriting",
     description:
-      "Receive automated risk assessments and energy reports powered by satellite data and AI.",
+      "Each property gets scored across 50+ risk models — flood, wildfire, heat stress, wind exposure, ESG, energy performance — using live satellite data from Google Earth Engine.",
   },
   {
     step: 3,
-    title: "Make Decisions",
+    title: "Price Risk, Close Deals",
     description:
-      "Use AI-driven insights and recommendations to guide your next investment or mitigation move.",
+      "Export underwriting reports, set parametric insurance triggers, or pipe scores directly into your deal pipeline via API. Make acquisition and renewal decisions backed by real data.",
   },
 ];
 
 export const STATS = [
-  { value: "10,000+", label: "Properties" },
-  { value: "50+", label: "Risk Models" },
-  { value: "99.7%", label: "Uptime" },
-  { value: "Real-time", label: "Satellite" },
+  { value: "10,000+", label: "Properties Underwritten" },
+  { value: "50+", label: "Environmental Risk Models" },
+  { value: "12", label: "Satellite-Powered Services" },
+  { value: "<5 min", label: "Per-Property Analysis" },
 ];
 
 export const TESTIMONIALS = [
@@ -116,7 +116,7 @@ export const TESTIMONIALS = [
     company: "Meridian Capital Group",
     role: "VP of Acquisitions",
     quote:
-      "TerraCube transformed how we evaluate property risk. The satellite-driven insights caught flood exposure our traditional due diligence missed entirely.",
+      "We passed on a coastal portfolio last quarter based on TerraCube's flood and storm-surge scores. Two months later, Hurricane Milton validated every flag. That's the kind of edge traditional due diligence can't give you.",
     stars: 5,
   },
   {
@@ -124,7 +124,7 @@ export const TESTIMONIALS = [
     company: "Greenfield REIT",
     role: "Portfolio Manager",
     quote:
-      "The energy analytics alone saved us six figures in the first year. We now factor climate resilience into every acquisition decision.",
+      "We used to spend $15K per property on third-party environmental reports. TerraCube covers our entire 200-property portfolio for a fraction of that — and the satellite data updates continuously.",
     stars: 5,
   },
   {
@@ -132,7 +132,7 @@ export const TESTIMONIALS = [
     company: "Apex Property Advisors",
     role: "Chief Risk Officer",
     quote:
-      "Finally, a platform that brings together environmental risk, energy data, and AI in one place. Our reporting time dropped by 80%.",
+      "The parametric insurance triggers alone justified the subscription. We set up automated weather-event payouts across 40 assets in an afternoon — no claims adjusters, no waiting.",
     stars: 5,
   },
 ];
@@ -142,7 +142,7 @@ export const PRICING_TIERS = [
     name: "Free",
     price: "$0",
     period: "forever",
-    description: "Get started with basic property analysis",
+    description: "Environmental risk scores for up to 5 properties",
     features: [
       { text: "Up to 5 properties", included: true },
       { text: "Basic risk scores", included: true },
@@ -160,7 +160,7 @@ export const PRICING_TIERS = [
     name: "Pro",
     price: "$49",
     period: "/mo",
-    description: "Advanced analytics for growing portfolios",
+    description: "Full underwriting stack for growing portfolios",
     features: [
       { text: "Up to 50 properties", included: true },
       { text: "Full risk + energy models", included: true },
@@ -178,7 +178,7 @@ export const PRICING_TIERS = [
     name: "Enterprise",
     price: "Custom",
     period: "",
-    description: "Tailored solutions for large organizations",
+    description: "Custom underwriting for institutional portfolios",
     features: [
       { text: "Unlimited properties", included: true },
       { text: "Custom risk models", included: true },
@@ -202,6 +202,7 @@ export const MARKETPLACE_SERVICES = [
       "Wind, flood, freeze-thaw, and heat risk analysis with continuous satellite monitoring and alerting.",
     tags: ["Wind", "Flood", "Freeze-Thaw", "Heat"],
     badge: "Core",
+    price: "Included",
   },
   {
     icon: "Thermometer",
@@ -210,6 +211,7 @@ export const MARKETPLACE_SERVICES = [
       "Heating and cooling degree day calculations, building energy modeling, and efficiency scoring.",
     tags: ["HDD", "CDD", "Efficiency"],
     badge: "Core",
+    price: "Included",
   },
   {
     icon: "Flame",
@@ -218,6 +220,7 @@ export const MARKETPLACE_SERVICES = [
       "Dynamic wildfire risk assessment using MODIS fire history, vegetation dryness, drought stress, and terrain analysis.",
     tags: ["MODIS", "ERA5", "SAR"],
     badge: "New",
+    price: "Pro+",
   },
   {
     icon: "Bell",
@@ -226,6 +229,7 @@ export const MARKETPLACE_SERVICES = [
       "Objective, satellite-based insurance triggers for wind, flood, heat, and freeze events. No claims adjuster needed.",
     tags: ["Wind", "Flood", "Heat", "Freeze"],
     badge: "New",
+    price: "Pro+",
   },
   {
     icon: "Leaf",
@@ -234,6 +238,7 @@ export const MARKETPLACE_SERVICES = [
       "Environmental, Social, and Governance scoring for properties — green space, air quality, land use, and deforestation risk.",
     tags: ["ESG", "NDVI", "NO2", "Sentinel-5P"],
     badge: "New",
+    price: "Pro+",
   },
   {
     icon: "Sun",
@@ -242,6 +247,7 @@ export const MARKETPLACE_SERVICES = [
       "Rooftop solar viability assessment — irradiance mapping, optimal tilt/azimuth, shading risk, and ROI projections.",
     tags: ["ERA5", "DEM", "Solar"],
     badge: "New",
+    price: "Pro+",
   },
   {
     icon: "Siren",
@@ -250,6 +256,7 @@ export const MARKETPLACE_SERVICES = [
       "Rapid damage assessment via SAR change detection — before/after analysis for floods, hurricanes, wildfires, and earthquakes.",
     tags: ["SAR", "Sentinel-1", "Damage"],
     badge: "New",
+    price: "Enterprise",
   },
   {
     icon: "TreePine",
@@ -258,6 +265,7 @@ export const MARKETPLACE_SERVICES = [
       "Verify carbon offset and reforestation projects — forest integrity, biomass, NDVI trends, carbon stock estimation, and annual sequestration rates.",
     tags: ["GEDI", "Hansen", "MODIS NPP"],
     badge: "New",
+    price: "Enterprise",
   },
   {
     icon: "BarChart3",
@@ -265,6 +273,7 @@ export const MARKETPLACE_SERVICES = [
     description:
       "Aggregated risk scores, trend analysis, and comparative benchmarking across your entire portfolio.",
     tags: ["Analytics", "Benchmarks"],
+    price: "Included",
   },
   {
     icon: "Bot",
@@ -272,6 +281,7 @@ export const MARKETPLACE_SERVICES = [
     description:
       "Natural language interface for querying property data, generating reports, and getting recommendations.",
     tags: ["AI", "NLP", "Reports"],
+    price: "Pro+",
   },
   {
     icon: "Clock",
@@ -279,6 +289,7 @@ export const MARKETPLACE_SERVICES = [
     description:
       "Scheduled analyses, automated alert triggers, and custom workflow pipelines for your team.",
     tags: ["Automation", "Alerts"],
+    price: "Pro+",
   },
   {
     icon: "Code",
@@ -286,5 +297,6 @@ export const MARKETPLACE_SERVICES = [
     description:
       "RESTful API and webhooks for integrating TerraCube data into your existing systems and tools.",
     tags: ["REST", "Webhooks"],
+    price: "Pro+",
   },
 ];

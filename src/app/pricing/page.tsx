@@ -23,8 +23,8 @@ export default function PricingPage() {
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
             <p className="mt-6 text-lg text-navy-300 max-w-2xl mx-auto">
-              Start free and scale as your portfolio grows. No hidden fees, no
-              long-term contracts.
+              Analyze 5 properties free. Scale to thousands as your underwriting
+              needs grow — no hidden fees, no long-term contracts.
             </p>
           </AnimatedSection>
         </div>
@@ -85,7 +85,13 @@ export default function PricingPage() {
                   </ul>
 
                   <Link
-                    href={tier.name === "Enterprise" ? "/about" : "/marketplace"}
+                    href={
+                      tier.name === "Enterprise"
+                        ? "mailto:sales@terracube.com?subject=Enterprise%20Inquiry"
+                        : tier.name === "Free"
+                          ? "/marketplace"
+                          : "/marketplace"
+                    }
                     className={`mt-8 block rounded-lg px-4 py-3 text-sm font-medium text-center transition-colors ${
                       tier.highlighted
                         ? "bg-brand-500 text-white hover:bg-brand-600"
@@ -114,6 +120,7 @@ export default function PricingPage() {
             <div className="glass rounded-xl overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
+                  <caption className="sr-only">Feature comparison across Free, Pro, and Enterprise tiers</caption>
                   <thead>
                     <tr className="border-b border-white/5">
                       <th className="text-left py-4 px-6 text-navy-400 font-medium">

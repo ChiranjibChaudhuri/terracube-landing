@@ -80,30 +80,30 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight">
-              Earth Intelligence for{" "}
-              <span className="gradient-text">Smarter Real Estate</span>{" "}
-              Decisions
+              Underwrite Climate Risk{" "}
+              <span className="gradient-text">Before You Invest</span>
             </h1>
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
             <p className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-navy-300">
-              Harness satellite data, AI-powered risk models, and real-time
-              environmental analytics to make confident property decisions.
+              Satellite-powered environmental underwriting for real estate.
+              Quantify flood, wildfire, and heat exposure across your entire
+              portfolio — before it shows up in your loss ratios.
             </p>
           </AnimatedSection>
           <AnimatedSection delay={0.3}>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/marketplace"
-                className="rounded-lg bg-brand-500 px-6 py-3 text-base font-medium text-white hover:bg-brand-600 transition-colors flex items-center gap-2"
+                href="/pricing#signup"
+                className="rounded-lg bg-brand-500 px-8 py-3.5 text-base font-semibold text-white hover:bg-brand-600 transition-colors flex items-center gap-2 shadow-lg shadow-brand-500/20"
               >
-                Explore Marketplace <ArrowRight size={18} />
+                Assess Your Portfolio Risk <ArrowRight size={18} />
               </Link>
               <Link
-                href="/about"
-                className="rounded-lg border border-brand-500/40 px-6 py-3 text-base font-medium text-brand-400 hover:bg-brand-500/10 transition-colors"
+                href="/#how-it-works"
+                className="rounded-lg border border-brand-500/40 px-6 py-3.5 text-base font-medium text-brand-400 hover:bg-brand-500/10 transition-colors"
               >
-                Learn More
+                See How It Works
               </Link>
             </div>
           </AnimatedSection>
@@ -131,12 +131,14 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold">
-              Everything You Need for{" "}
-              <span className="gradient-text">Property Intelligence</span>
+              The Full{" "}
+              <span className="gradient-text">Environmental Underwriting</span>{" "}
+              Stack
             </h2>
             <p className="mt-4 text-navy-400 max-w-2xl mx-auto">
-              A comprehensive suite of tools designed to give you an
-              unprecedented view of your real estate portfolio.
+              12 satellite-driven modules covering every environmental risk
+              factor — from wildfire and flood to carbon credits and parametric
+              insurance triggers.
             </p>
           </AnimatedSection>
 
@@ -163,6 +165,8 @@ export default function Home() {
           <div className="mt-10 text-center">
             <button
               onClick={() => setShowMoreFeatures((prev) => !prev)}
+              aria-expanded={showMoreFeatures}
+              aria-controls="more-features"
               className="inline-flex items-center gap-2 rounded-lg border border-brand-500/40 px-6 py-3 text-sm font-medium text-brand-400 hover:bg-brand-500/10 transition-colors"
             >
               {showMoreFeatures ? "Show fewer features" : "Show more features"}
@@ -177,7 +181,8 @@ export default function Home() {
 
           {/* Remaining 8 features — smaller 4-column cards, collapsible */}
           <div
-            className={`grid grid-cols-2 lg:grid-cols-4 gap-4 overflow-hidden transition-all duration-500 ease-in-out ${
+            id="more-features"
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 overflow-hidden transition-all duration-500 ease-in-out ${
               showMoreFeatures
                 ? "mt-10 max-h-[2000px] opacity-100"
                 : "max-h-0 opacity-0"
@@ -203,7 +208,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="py-24 bg-navy-900/30">
+      <section id="how-it-works" className="py-24 bg-navy-900/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold">
@@ -244,18 +249,19 @@ export default function Home() {
           <AnimatedSection>
             <div className="glass rounded-2xl p-8 sm:p-12 text-center glow-brand">
               <h2 className="text-3xl sm:text-4xl font-bold">
-                <span className="gradient-text">Vault Neo</span> Marketplace
+                The <span className="gradient-text">Vault Neo</span> Marketplace
               </h2>
               <p className="mt-4 text-navy-300 max-w-2xl mx-auto">
-                Access our full catalog of Earth intelligence services — risk
-                monitoring, energy estimation, AI agents, workflow automation,
-                and more — all in one integrated platform.
+                One platform, every environmental signal. Subscribe to the
+                risk modules your underwriting desk needs — wildfire scoring,
+                parametric triggers, carbon verification, ESG ratings — and
+                get results in minutes, not months.
               </p>
               <Link
                 href={process.env.NEXT_PUBLIC_APP_URL || "/marketplace"}
-                className="mt-8 inline-flex items-center gap-2 rounded-lg bg-brand-500 px-6 py-3 text-base font-medium text-white hover:bg-brand-600 transition-colors"
+                className="mt-8 inline-flex items-center gap-2 rounded-lg bg-brand-500 px-8 py-3.5 text-base font-semibold text-white hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20"
               >
-                Launch Vault Neo <ArrowRight size={18} />
+                Browse Services <ArrowRight size={18} />
               </Link>
             </div>
           </AnimatedSection>
@@ -276,12 +282,13 @@ export default function Home() {
             {TESTIMONIALS.map((t, i) => (
               <AnimatedSection key={t.name} delay={i * 0.1}>
                 <div className="glass rounded-xl p-6 h-full flex flex-col">
-                  <div className="flex gap-1 mb-4">
+                  <div className="flex gap-1 mb-4" role="img" aria-label={`${t.stars} out of 5 stars`}>
                     {Array.from({ length: t.stars }).map((_, j) => (
                       <Star
                         key={j}
                         size={16}
                         className="fill-brand-400 text-brand-400"
+                        aria-hidden="true"
                       />
                     ))}
                   </div>
@@ -307,18 +314,27 @@ export default function Home() {
           <AnimatedSection>
             <div className="rounded-2xl bg-gradient-to-br from-brand-600/30 via-brand-500/20 to-navy-900 p-8 sm:p-16 text-center border border-brand-500/20">
               <h2 className="text-3xl sm:text-4xl font-bold text-white">
-                Ready to Transform Your Property Analysis?
+                Stop Guessing. Start Measuring.
               </h2>
               <p className="mt-4 text-navy-300 max-w-xl mx-auto">
-                Join thousands of real estate professionals using Earth
-                intelligence to make smarter decisions.
+                Every day without satellite-grade environmental data is another
+                day of unpriced risk in your portfolio. Start with 5 properties
+                free — no credit card, no commitment.
               </p>
-              <Link
-                href="/pricing#signup"
-                className="mt-8 inline-flex items-center gap-2 rounded-lg bg-brand-500 px-8 py-3 text-base font-medium text-white hover:bg-brand-600 transition-colors"
-              >
-                Get Started Free <ArrowRight size={18} />
-              </Link>
+              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  href="/pricing#signup"
+                  className="rounded-lg bg-brand-500 px-8 py-3.5 text-base font-semibold text-white hover:bg-brand-600 transition-colors flex items-center gap-2 shadow-lg shadow-brand-500/20"
+                >
+                  Start Free Risk Assessment <ArrowRight size={18} />
+                </Link>
+                <Link
+                  href="mailto:sales@terracube.com?subject=Enterprise%20Inquiry"
+                  className="rounded-lg border border-brand-500/40 px-6 py-3.5 text-base font-medium text-brand-400 hover:bg-brand-500/10 transition-colors"
+                >
+                  Talk to Sales
+                </Link>
+              </div>
             </div>
           </AnimatedSection>
         </div>

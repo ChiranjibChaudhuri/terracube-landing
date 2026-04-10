@@ -22,10 +22,10 @@
   --color-navy-600: #515e77;
   --color-navy-700: #434e62;
   --color-navy-800: #3a4353;
-  --color-navy-900: #1a1f2e;
-  --color-navy-950: #0f1218;
+  --color-navy-900: #0e1a2e;
+  --color-navy-950: #0a1628;
 
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-outfit);
 
   --animate-fade-in: fade-in 0.6s ease-out forwards;
   --animate-slide-up: slide-up 0.6s ease-out forwards;
@@ -56,21 +56,21 @@
 }
 
 body {
-  background-color: var(--color-navy-950);
+  background-color: #0a1628;
   color: #eceef2;
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
 /* Glassmorphism */
 .glass {
-  background: rgba(26, 31, 46, 0.6);
+  background: rgba(10, 22, 40, 0.65);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-strong {
-  background: rgba(26, 31, 46, 0.8);
+  background: rgba(10, 22, 40, 0.85);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.1);

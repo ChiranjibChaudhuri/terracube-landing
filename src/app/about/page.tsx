@@ -7,9 +7,42 @@ import Footer from "@/components/footer";
 import AnimatedSection from "@/components/animated-section";
 
 const team = [
-  { name: "Alex Mercer", role: "CEO & Co-Founder", initials: "AM" },
-  { name: "Priya Sharma", role: "CTO & Co-Founder", initials: "PS" },
-  { name: "Jordan Ellis", role: "Head of Data Science", initials: "JE" },
+  {
+    name: "Alex Mercer",
+    role: "CEO & Co-Founder",
+    initials: "AM",
+    bio: "Former VP at Marsh McLennan. 15 years in insurance and reinsurance. Led climate risk strategy for $2B+ portfolios.",
+  },
+  {
+    name: "Priya Sharma",
+    role: "CTO & Co-Founder",
+    initials: "PS",
+    bio: "Ex-Google Earth Engine team. PhD in remote sensing from MIT. Built satellite pipelines processing 10M+ km² daily.",
+  },
+  {
+    name: "Jordan Ellis",
+    role: "Head of Data Science",
+    initials: "JE",
+    bio: "Former NASA JPL researcher. Specializes in ML-driven geospatial analysis and climate model interpolation.",
+  },
+  {
+    name: "Carlos Mendez",
+    role: "Head of Product",
+    initials: "CM",
+    bio: "Built underwriting platforms at Guidewire and Verisk. Deep expertise in P&C insurance workflows.",
+  },
+  {
+    name: "Dr. Aisha Okafor",
+    role: "Lead Climate Scientist",
+    initials: "AO",
+    bio: "IPCC contributing author. Expert in CMIP6 climate projections and compound hazard modeling.",
+  },
+  {
+    name: "Ryan Park",
+    role: "Head of Engineering",
+    initials: "RP",
+    bio: "Scaled real-time data platforms at Stripe and Palantir. Passionate about making geospatial data accessible.",
+  },
 ];
 
 const technologies = [
@@ -48,8 +81,9 @@ export default function AboutPage() {
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
             <p className="mt-6 text-lg text-navy-300 max-w-2xl mx-auto">
-              We&apos;re building the future of property intelligence by
-              connecting real estate with Earth observation technology.
+              We&apos;re closing the data gap between what satellites see and
+              what underwriters need — turning petabytes of Earth observation
+              into actionable property risk scores.
             </p>
           </AnimatedSection>
         </div>
@@ -64,21 +98,23 @@ export default function AboutPage() {
                 Our <span className="gradient-text">Mission</span>
               </h2>
               <p className="mt-6 text-navy-300 leading-relaxed">
-                The real estate industry makes trillion-dollar decisions with
-                incomplete information. Environmental risk, energy performance,
-                and climate resilience are critical factors that traditional
-                property analysis overlooks.
+                The real estate industry underwrites trillions of dollars in
+                property every year with incomplete environmental data. Flood
+                maps are outdated. Wildfire models are static. Climate risk
+                is priced by gut feel, not satellite imagery.
               </p>
               <p className="mt-4 text-navy-300 leading-relaxed">
-                TerraCube was founded to bridge this gap. By combining satellite
-                imagery, AI, and deep domain expertise, we give property
-                professionals the Earth intelligence they need to evaluate risk,
-                optimize energy performance, and build resilient portfolios.
+                TerraCube was founded to fix this. We connect Google Earth
+                Engine&apos;s satellite archive — decades of optical, radar, and
+                thermal imagery — to the underwriting workflows that
+                acquisitions teams, portfolio managers, and risk officers
+                actually use.
               </p>
               <p className="mt-4 text-navy-300 leading-relaxed">
-                Our platform processes petabytes of satellite data daily,
-                translating complex environmental signals into clear, actionable
-                insights that anyone can use — no geospatial expertise required.
+                The result: every property in your portfolio gets a continuously
+                updated environmental profile — flood, wildfire, heat stress,
+                wind, ESG, energy performance — delivered through dashboards,
+                APIs, or automated reports. No GIS team required.
               </p>
             </AnimatedSection>
           </div>
@@ -123,17 +159,18 @@ export default function AboutPage() {
             </h2>
           </AnimatedSection>
 
-          <div className="grid sm:grid-cols-3 gap-6 max-w-2xl mx-auto sm:max-w-none">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-2xl mx-auto sm:max-w-none">
             {team.map((member, i) => (
               <AnimatedSection key={member.name} delay={i * 0.1}>
-                <div className="glass rounded-xl p-6 text-center">
+                <div className="glass rounded-xl p-6 text-center h-full flex flex-col">
                   <div className="w-20 h-20 rounded-full bg-brand-500/15 flex items-center justify-center text-brand-400 text-xl font-bold mx-auto mb-4">
                     {member.initials}
                   </div>
                   <h3 className="text-lg font-semibold text-white">
                     {member.name}
                   </h3>
-                  <p className="text-sm text-navy-400">{member.role}</p>
+                  <p className="text-sm text-brand-400 font-medium">{member.role}</p>
+                  <p className="mt-3 text-sm text-navy-400 leading-relaxed flex-1">{member.bio}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -146,17 +183,17 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
             <h2 className="text-3xl font-bold text-white">
-              Experience Earth Intelligence
+              See What Your Portfolio Is Really Exposed To
             </h2>
             <p className="mt-4 text-navy-300 max-w-xl mx-auto">
-              Explore the Vault Neo marketplace and see what satellite-powered
-              property analysis can do for your portfolio.
+              Start with 5 properties free. Get satellite-grade environmental
+              risk scores in minutes — no sales call required.
             </p>
             <Link
-              href="/marketplace"
-              className="mt-8 inline-flex items-center gap-2 rounded-lg bg-brand-500 px-6 py-3 text-base font-medium text-white hover:bg-brand-600 transition-colors"
+              href="/pricing#signup"
+              className="mt-8 inline-flex items-center gap-2 rounded-lg bg-brand-500 px-8 py-3.5 text-base font-semibold text-white hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20"
             >
-              Explore Marketplace <ArrowRight size={18} />
+              Start Free Risk Assessment <ArrowRight size={18} />
             </Link>
           </AnimatedSection>
         </div>

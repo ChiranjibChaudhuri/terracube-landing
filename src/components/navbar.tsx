@@ -28,10 +28,10 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/marketplace"
-              className="rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-white hover:bg-brand-600 transition-colors"
+              href="/pricing#signup"
+              className="rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-600 transition-colors shadow-sm shadow-brand-500/20"
             >
-              Launch App
+              Get Started Free
             </Link>
           </div>
 
@@ -61,11 +61,11 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
-              href="/marketplace"
+              href="/pricing#signup"
               onClick={() => setOpen(false)}
-              className="block rounded-lg bg-brand-500 px-4 py-2 text-sm font-medium text-white text-center hover:bg-brand-600 transition-colors"
+              className="block rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white text-center hover:bg-brand-600 transition-colors"
             >
-              Launch App
+              Get Started Free
             </Link>
           </div>
         </div>

@@ -51,8 +51,9 @@ export default function MarketplacePage() {
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
             <p className="mt-6 text-lg text-navy-300 max-w-2xl mx-auto">
-              Browse our full catalog of Earth intelligence services. Each
-              module integrates seamlessly into your property analysis workflow.
+              12 satellite-powered underwriting modules. Subscribe to what you
+              need — each service delivers property-level environmental scores
+              via dashboard, API, or automated reports.
             </p>
           </AnimatedSection>
         </div>
@@ -79,6 +80,11 @@ export default function MarketplacePage() {
                           : 'bg-brand-500/20 text-brand-400'
                       }`}>
                         {service.badge}
+                      </span>
+                    )}
+                    {service.price && (
+                      <span className="ml-auto text-xs px-2 py-0.5 rounded-full font-medium bg-white/[0.06] text-navy-300">
+                        {service.price}
                       </span>
                     )}
                   </div>
@@ -108,17 +114,18 @@ export default function MarketplacePage() {
           <AnimatedSection>
             <div className="rounded-2xl bg-gradient-to-br from-brand-600/30 via-brand-500/20 to-navy-900 p-8 sm:p-16 text-center border border-brand-500/20">
               <h2 className="text-3xl sm:text-4xl font-bold text-white">
-                Ready to Get Started?
+                Start Underwriting Smarter Today
               </h2>
               <p className="mt-4 text-navy-300 max-w-xl mx-auto">
-                Launch Vault Neo to access all services, manage your properties,
-                and start generating insights.
+                Analyze 5 properties free. See flood, wildfire, heat, and
+                ESG scores powered by live satellite data — then decide if
+                you need the full stack.
               </p>
               <Link
-                href={process.env.NEXT_PUBLIC_APP_URL || "/marketplace"}
-                className="mt-8 inline-flex items-center gap-2 rounded-lg bg-brand-500 px-8 py-3 text-base font-medium text-white hover:bg-brand-600 transition-colors"
+                href="/pricing#signup"
+                className="mt-8 inline-flex items-center gap-2 rounded-lg bg-brand-500 px-8 py-3.5 text-base font-semibold text-white hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20"
               >
-                Launch Vault Neo <ArrowRight size={18} />
+                Get Started Free <ArrowRight size={18} />
               </Link>
             </div>
           </AnimatedSection>
