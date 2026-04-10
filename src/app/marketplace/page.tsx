@@ -56,6 +56,26 @@ export default function MarketplacePage() {
               via dashboard, API, or automated reports.
             </p>
           </AnimatedSection>
+
+          {/* Category filter pills */}
+          <AnimatedSection delay={0.25}>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              {["All Services", "Core", "Risk", "Energy", "Insurance", "API"].map(
+                (cat) => (
+                  <span
+                    key={cat}
+                    className={`text-xs px-4 py-2 rounded-full font-medium transition-colors cursor-default ${
+                      cat === "All Services"
+                        ? "bg-brand-500 text-white"
+                        : "bg-white/[0.06] text-navy-300 hover:bg-white/[0.1]"
+                    }`}
+                  >
+                    {cat}
+                  </span>
+                )
+              )}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -65,41 +85,51 @@ export default function MarketplacePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {MARKETPLACE_SERVICES.map((service, i) => (
               <AnimatedSection key={service.title} delay={i * 0.08}>
-                <div className="glass rounded-xl p-6 h-full hover:scale-[1.02] hover:glow-brand transition-all duration-300 flex flex-col">
-                  <div className="w-12 h-12 rounded-lg bg-brand-500/10 flex items-center justify-center text-brand-400 mb-4">
-                    {iconMap[service.icon]}
+                <div className="glass rounded-xl h-full hover:scale-[1.02] hover:glow-brand transition-all duration-300 flex flex-col overflow-hidden group">
+                  {/* Visual header bar with icon */}
+                  <div className="relative px-6 pt-6 pb-4 bg-gradient-to-br from-brand-500/5 to-transparent">
+                    <div className="flex items-start justify-between">
+                      <div className="w-14 h-14 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400 group-hover:bg-brand-500/15 transition-colors">
+                        {iconMap[service.icon]}
+                      </div>
+                      {service.price && (
+                        <span className="text-xs px-3 py-1 rounded-full font-medium bg-white/[0.06] text-navy-300 border border-white/5">
+                          {service.price}
+                        </span>
+                      )}
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="text-lg font-semibold text-white">
-                      {service.title}
-                    </h3>
-                    {service.badge && (
-                      <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-                        service.badge === 'New'
-                          ? 'bg-emerald-500/20 text-emerald-400'
-                          : 'bg-brand-500/20 text-brand-400'
-                      }`}>
-                        {service.badge}
-                      </span>
-                    )}
-                    {service.price && (
-                      <span className="ml-auto text-xs px-2 py-0.5 rounded-full font-medium bg-white/[0.06] text-navy-300">
-                        {service.price}
-                      </span>
-                    )}
-                  </div>
-                  <p className="mt-2 text-sm text-navy-300 leading-relaxed flex-1">
-                    {service.description}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {service.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-2 py-1 rounded-full bg-brand-500/10 text-brand-400"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  {/* Content */}
+                  <div className="px-6 pb-6 flex flex-col flex-1">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-semibold text-white">
+                        {service.title}
+                      </h3>
+                      {service.badge && (
+                        <span
+                          className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                            service.badge === "New"
+                              ? "bg-emerald-500/20 text-emerald-400"
+                              : "bg-brand-500/20 text-brand-400"
+                          }`}
+                        >
+                          {service.badge}
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-2 text-sm text-navy-300 leading-relaxed flex-1">
+                      {service.description}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {service.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs px-2 py-1 rounded-full bg-brand-500/10 text-brand-400"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </AnimatedSection>

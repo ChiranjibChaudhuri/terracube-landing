@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BRAND_NAME } from "@/lib/constants";
+import { BrandLogo } from "./brand-logo";
 
 const footerLinks = [
   { label: "Marketplace", href: "/marketplace" },
@@ -21,8 +22,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand column */}
           <div className="md:col-span-2">
-            <Link href="/" className="text-xl font-bold gradient-text">
-              {BRAND_NAME}
+            <Link href="/">
+              <BrandLogo />
             </Link>
             <p className="mt-3 max-w-sm text-sm text-navy-400 leading-relaxed">
               Satellite-powered environmental underwriting for real estate. Quantify climate risk across your portfolio with AI-driven models and live Earth observation data.

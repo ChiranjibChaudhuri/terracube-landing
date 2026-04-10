@@ -22,6 +22,10 @@ import {
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import AnimatedSection from "@/components/animated-section";
+import DashboardMockup from "@/components/dashboard-mockup";
+import PartnerLogos from "@/components/partner-logos";
+import PipelineDiagram from "@/components/pipeline-diagram";
+import NewsletterSignup from "@/components/newsletter-signup";
 import {
   FEATURES,
   STATS,
@@ -72,43 +76,56 @@ export default function Home() {
       <Navbar />
 
       {/* Hero */}
-      <section id="main-content" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-        {/* Animated gradient orb — max-w-full prevents mobile overflow */}
+      <section id="main-content" className="relative flex items-center justify-center overflow-hidden pt-24 pb-20">
+        {/* Animated gradient orb - max-w-full prevents mobile overflow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] max-w-full h-[600px] rounded-full bg-[radial-gradient(circle,rgba(65,182,196,0.2)_0%,rgba(46,154,173,0.1)_40%,transparent_70%)] animate-orb-float blur-3xl pointer-events-none" />
         <div className="absolute top-1/3 right-1/4 w-[400px] max-w-full h-[400px] rounded-full bg-[radial-gradient(circle,rgba(35,101,119,0.15)_0%,transparent_70%)] animate-glow-pulse blur-2xl pointer-events-none" />
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <AnimatedSection>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight">
-              Underwrite Climate Risk{" "}
-              <span className="gradient-text">Before You Invest</span>
-            </h1>
-          </AnimatedSection>
-          <AnimatedSection delay={0.15}>
-            <p className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-navy-300">
-              Satellite-powered environmental underwriting for real estate.
-              Quantify flood, wildfire, and heat exposure across your entire
-              portfolio — before it shows up in your loss ratios.
-            </p>
-          </AnimatedSection>
-          <AnimatedSection delay={0.3}>
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/pricing#signup"
-                className="rounded-lg bg-brand-500 px-8 py-3.5 text-base font-semibold text-white hover:bg-brand-600 transition-colors flex items-center gap-2 shadow-lg shadow-brand-500/20"
-              >
-                Assess Your Portfolio Risk <ArrowRight size={18} />
-              </Link>
-              <Link
-                href="/#how-it-works"
-                className="rounded-lg border border-brand-500/40 px-6 py-3.5 text-base font-medium text-brand-400 hover:bg-brand-500/10 transition-colors"
-              >
-                See How It Works
-              </Link>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            {/* Text content */}
+            <div className="flex-1 text-center lg:text-left">
+              <AnimatedSection>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+                  Underwrite Climate Risk{" "}
+                  <span className="gradient-text">Before You Invest</span>
+                </h1>
+              </AnimatedSection>
+              <AnimatedSection delay={0.15}>
+                <p className="mt-6 max-w-2xl mx-auto lg:mx-0 text-lg sm:text-xl text-navy-300">
+                  Satellite-powered environmental underwriting for real estate.
+                  Quantify flood, wildfire, and heat exposure across your entire
+                  portfolio - before it shows up in your loss ratios.
+                </p>
+              </AnimatedSection>
+              <AnimatedSection delay={0.3}>
+                <div className="mt-6 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
+                  <Link
+                    href="/pricing#signup"
+                    className="rounded-lg bg-brand-500 px-8 py-3.5 text-base font-semibold text-white hover:bg-brand-600 transition-colors flex items-center gap-2 shadow-lg shadow-brand-500/20"
+                  >
+                    Assess Your Portfolio Risk <ArrowRight size={18} />
+                  </Link>
+                  <Link
+                    href="/#how-it-works"
+                    className="rounded-lg border border-brand-500/40 px-6 py-3.5 text-base font-medium text-brand-400 hover:bg-brand-500/10 transition-colors"
+                  >
+                    See How It Works
+                  </Link>
+                </div>
+              </AnimatedSection>
             </div>
-          </AnimatedSection>
+
+            {/* Dashboard mockup */}
+            <AnimatedSection delay={0.2} className="flex-1 w-full lg:w-auto">
+              <DashboardMockup />
+            </AnimatedSection>
+          </div>
         </div>
       </section>
+
+      {/* Trusted By */}
+      <PartnerLogos />
 
       {/* Stats bar */}
       <section className="border-y border-white/5 bg-navy-900/50">
@@ -127,22 +144,22 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section id="features" className="py-24">
+      <section id="features" className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold">
-              The Full{" "}
+              The Full {""}
               <span className="gradient-text">Environmental Underwriting</span>{" "}
               Stack
             </h2>
             <p className="mt-4 text-navy-400 max-w-2xl mx-auto">
               12 satellite-driven modules covering every environmental risk
-              factor — from wildfire and flood to carbon credits and parametric
+              factor - from wildfire and flood to carbon credits and parametric
               insurance triggers.
             </p>
           </AnimatedSection>
 
-          {/* Top 4 featured — larger 2-column cards */}
+          {/* Top 4 featured - larger 2-column cards */}
           <div className="grid md:grid-cols-2 gap-8">
             {topFeatures.map((feature, i) => (
               <AnimatedSection key={feature.title} delay={i * 0.1}>
@@ -162,7 +179,7 @@ export default function Home() {
           </div>
 
           {/* Toggle for remaining features */}
-          <div className="mt-10 text-center">
+          <div className="mt-6 text-center">
             <button
               onClick={() => setShowMoreFeatures((prev) => !prev)}
               aria-expanded={showMoreFeatures}
@@ -179,12 +196,12 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Remaining 8 features — smaller 4-column cards, collapsible */}
+          {/* Remaining 8 features - smaller 4-column cards, collapsible */}
           <div
             id="more-features"
             className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 overflow-hidden transition-all duration-500 ease-in-out ${
               showMoreFeatures
-                ? "mt-10 max-h-[2000px] opacity-100"
+                ? "mt-6 max-h-[2000px] opacity-100"
                 : "max-h-0 opacity-0"
             }`}
           >
@@ -208,43 +225,53 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section id="how-it-works" className="py-24 bg-navy-900/30">
+      <section id="how-it-works" className="py-16 bg-navy-900/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold">
               How It <span className="gradient-text">Works</span>
             </h2>
           </AnimatedSection>
 
-          <div className="relative max-w-3xl mx-auto">
-            {/* Connecting line */}
-            <div className="absolute left-6 top-8 bottom-8 w-px bg-gradient-to-b from-brand-500/60 via-brand-400/30 to-transparent hidden sm:block" />
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+            {/* Steps */}
+            <div className="flex-1">
+              <div className="relative max-w-xl">
+                {/* Connecting line */}
+                <div className="absolute left-6 top-8 bottom-8 w-px bg-gradient-to-b from-brand-500/60 via-brand-400/30 to-transparent hidden sm:block" />
 
-            <div className="space-y-12">
-              {HOW_IT_WORKS.map((step, i) => (
-                <AnimatedSection key={step.step} delay={i * 0.15}>
-                  <div className="flex gap-6 items-start">
-                    <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-brand-500 flex items-center justify-center text-lg font-bold text-white">
-                      {step.step}
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white">
-                        {step.title}
-                      </h3>
-                      <p className="mt-2 text-navy-300">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              ))}
+                <div className="space-y-8">
+                  {HOW_IT_WORKS.map((step, i) => (
+                    <AnimatedSection key={step.step} delay={i * 0.15}>
+                      <div className="flex gap-6 items-start">
+                        <div className="relative z-10 flex-shrink-0 w-12 h-12 rounded-full bg-brand-500 flex items-center justify-center text-lg font-bold text-white">
+                          {step.step}
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-white">
+                            {step.title}
+                          </h3>
+                          <p className="mt-2 text-navy-300">
+                            {step.description}
+                          </p>
+                        </div>
+                      </div>
+                    </AnimatedSection>
+                  ))}
+                </div>
+              </div>
             </div>
+
+            {/* Pipeline diagram */}
+            <AnimatedSection delay={0.2} className="flex-1 hidden lg:block">
+              <PipelineDiagram />
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* Marketplace Preview */}
-      <section className="py-24">
+      <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="glass rounded-2xl p-8 sm:p-12 text-center glow-brand">
@@ -253,8 +280,8 @@ export default function Home() {
               </h2>
               <p className="mt-4 text-navy-300 max-w-2xl mx-auto">
                 One platform, every environmental signal. Subscribe to the
-                risk modules your underwriting desk needs — wildfire scoring,
-                parametric triggers, carbon verification, ESG ratings — and
+                risk modules your underwriting desk needs - wildfire scoring,
+                parametric triggers, carbon verification, ESG ratings - and
                 get results in minutes, not months.
               </p>
               <Link
@@ -269,9 +296,9 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-navy-900/30">
+      <section className="py-16 bg-navy-900/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
+          <AnimatedSection className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold">
               Trusted by{" "}
               <span className="gradient-text">Industry Leaders</span>
@@ -309,19 +336,19 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24">
+      <section className="py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="rounded-2xl bg-gradient-to-br from-brand-600/30 via-brand-500/20 to-navy-900 p-8 sm:p-16 text-center border border-brand-500/20">
+            <div className="rounded-2xl bg-gradient-to-br from-brand-600/30 via-brand-500/20 to-navy-900 p-8 sm:p-12 text-center border border-brand-500/20">
               <h2 className="text-3xl sm:text-4xl font-bold text-white">
                 Stop Guessing. Start Measuring.
               </h2>
               <p className="mt-4 text-navy-300 max-w-xl mx-auto">
                 Every day without satellite-grade environmental data is another
                 day of unpriced risk in your portfolio. Start with 5 properties
-                free — no credit card, no commitment.
+                free - no credit card, no commitment.
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   href="/pricing#signup"
                   className="rounded-lg bg-brand-500 px-8 py-3.5 text-base font-semibold text-white hover:bg-brand-600 transition-colors flex items-center gap-2 shadow-lg shadow-brand-500/20"
@@ -339,6 +366,9 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* Newsletter */}
+      <NewsletterSignup />
 
       <Footer />
     </>
