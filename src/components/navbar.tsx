@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { BRAND_NAME, NAV_LINKS } from "@/lib/constants";
+import { NAV_LINKS } from "@/lib/constants";
 import { BrandLogo } from "./brand-logo";
 
 export default function Navbar() {

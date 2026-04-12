@@ -59,6 +59,7 @@ body {
   background-color: #0a1628;
   color: #eceef2;
   font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: clip;
 }
 
 /* Glassmorphism */

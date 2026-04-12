@@ -11,6 +11,8 @@ export function BrandLogo({ className = "" }: { className?: string }) {
         alt={BRAND_NAME}
         width={32}
         height={32}
+        loading="eager"
+        unoptimized
         className="dark:invert"
       />
       <span className="text-xl font-bold gradient-text">{BRAND_NAME}</span>
