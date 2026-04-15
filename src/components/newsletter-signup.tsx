@@ -8,11 +8,31 @@ export default function NewsletterSignup() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(e: React.FormEvent) {
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (email.trim()) {
+    if (!email.trim()) return;
+    setLoading(true);
+    setError(null);
+    try {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
+      const res = await fetch(`${apiUrl}/newsletter/subscribe`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim() }),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.detail || "Subscription failed");
+      }
       setSubmitted(true);
       setEmail("");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -63,11 +83,13 @@ export default function NewsletterSignup() {
                       />
                       <button
                         type="submit"
-                        className="rounded-lg bg-brand-500 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-600 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20 whitespace-nowrap"
+                        disabled={loading}
+                        className="rounded-lg bg-brand-500 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-600 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-brand-500/20 whitespace-nowrap disabled:opacity-50"
                       >
-                        Subscribe <ArrowRight size={16} />
+                        {loading ? "Subscribing..." : "Subscribe"} {!loading && <ArrowRight size={16} />}
                       </button>
                     </div>
+                    {error && <p className="text-xs text-red-400">{error}</p>}
                     <p className="text-xs text-navy-500">
                       Free monthly newsletter. Unsubscribe anytime.
                     </p>
