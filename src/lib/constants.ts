@@ -105,8 +105,8 @@ export const HOW_IT_WORKS = [
 
 export const STATS = [
   { value: "10,000+", label: "Properties Underwritten" },
-  { value: "50+", label: "Environmental Risk Models" },
-  { value: "12", label: "Satellite-Powered Services" },
+  { value: "34", label: "Risk Indices (21 GFS + 13 Satellite)" },
+  { value: "12", label: "Earth Engine Services" },
   { value: "<5 min", label: "Per-Property Analysis" },
 ];
 
@@ -199,8 +199,8 @@ export const MARKETPLACE_SERVICES = [
     icon: "Shield",
     title: "Risk Monitoring",
     description:
-      "Wind, flood, freeze-thaw, and heat risk analysis with continuous satellite monitoring and alerting.",
-    tags: ["Wind", "Flood", "Freeze-Thaw", "Heat"],
+      "34 risk indices across 21 GFS weather forecasts and 13 satellite observations — wind, flood, heat, air quality, soil moisture, and more.",
+    tags: ["21 GFS Indices", "13 Satellite Indices", "Real-time"],
     badge: "Core",
     price: "Included",
   },
