@@ -1,13 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { Check, X, Shield, Zap, Globe } from "lucide-react";
+import { Check, ChevronDown, ChevronUp } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import AnimatedSection from "@/components/animated-section";
-import { PRICING_MODEL } from "@/lib/constants";
+import { UsageCalculator } from "@/components/usage-calculator";
+import { PRICING_MODEL, SERVICE_PRICING, PRICING_FAQ } from "@/lib/constants";
 
 export default function PricingPage() {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
   return (
     <>
       <Navbar />
@@ -23,25 +27,8 @@ export default function PricingPage() {
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
             <p className="mt-6 text-lg text-navy-300 max-w-2xl mx-auto">
-              Analyze 5 properties free. Scale to thousands as your underwriting
-              needs grow — no hidden fees, no long-term contracts.
+              Pay only for what you use. Start free.
             </p>
-          </AnimatedSection>
-
-          {/* Value props */}
-          <AnimatedSection delay={0.25}>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-              {[
-                { icon: <Shield size={18} />, text: "No credit card required" },
-                { icon: <Zap size={18} />, text: "Set up in 5 minutes" },
-                { icon: <Globe size={18} />, text: "Cancel anytime" },
-              ].map((item) => (
-                <div key={item.text} className="flex items-center gap-2 text-sm text-navy-300">
-                  <span className="text-brand-400">{item.icon}</span>
-                  {item.text}
-                </div>
-              ))}
-            </div>
           </AnimatedSection>
         </div>
       </section>
@@ -93,13 +80,7 @@ export default function PricingPage() {
                   </ul>
 
                   <Link
-                    href={
-                      tier.name === "Enterprise"
-                        ? "mailto:sales@terracube.com?subject=Enterprise%20Inquiry"
-                        : tier.name === "Free"
-                          ? "/marketplace"
-                          : "/marketplace"
-                    }
+                    href={tier.ctaHref}
                     className={`mt-8 block rounded-lg px-4 py-3 text-sm font-medium text-center transition-colors ${
                       tier.highlighted
                         ? "bg-brand-500 text-white hover:bg-brand-600 shadow-lg shadow-brand-500/20"
@@ -115,77 +96,48 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Feature comparison */}
-      <section id="signup" className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Service Pricing Table */}
+      <section className="py-24 bg-navy-900/30">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-white">
-              Feature Comparison
+            <h2 className="text-3xl font-bold text-white">
+              Service <span className="gradient-text">Pricing</span>
             </h2>
-            <p className="mt-3 text-sm text-navy-400 max-w-lg mx-auto">
-              See exactly what&apos;s included in each plan
+            <p className="mt-4 text-navy-400">
+              Per-API-call pricing for every service
             </p>
           </AnimatedSection>
 
-          <AnimatedSection>
+          <AnimatedSection delay={0.1}>
             <div className="glass rounded-xl overflow-hidden border border-white/5">
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
-                  <caption className="sr-only">Feature comparison across Free, Pro, and Enterprise tiers</caption>
+                  <caption className="sr-only">Service pricing per API call</caption>
                   <thead>
                     <tr className="border-b border-white/5 bg-navy-900/40">
                       <th className="text-left py-4 px-6 text-navy-400 font-medium">
-                        Feature
+                        Service
                       </th>
-                      <th className="text-center py-4 px-6 text-navy-400 font-medium">
-                        Free
+                      <th className="text-right py-4 px-6 text-navy-400 font-medium">
+                        Price
                       </th>
-                      <th className="text-center py-4 px-6 font-medium">
-                        <span className="text-brand-400">Pro</span>
-                        <div className="text-[10px] text-brand-500/60 mt-0.5">recommended</div>
-                      </th>
-                      <th className="text-center py-4 px-6 text-navy-400 font-medium">
-                        Enterprise
+                      <th className="text-right py-4 px-6 text-navy-400 font-medium">
+                        Unit
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    {[
-                      ["Properties", "5", "50", "Unlimited"],
-                      ["Risk models", "Basic", "Full suite", "Custom"],
-                      ["Reports", "Monthly", "Weekly", "Real-time"],
-                      ["AI Agent", "\u2014", "\u2713", "\u2713"],
-                      ["Workflows", "\u2014", "\u2713", "Advanced"],
-                      ["API access", "\u2014", "\u2713", "Full"],
-                      ["Support", "Email", "Priority", "Dedicated + SLA"],
-                      ["Data retention", "30 days", "1 year", "Unlimited"],
-                      ["SSO / SAML", "\u2014", "\u2014", "\u2713"],
-                    ].map(([feature, free, pro, enterprise]) => (
+                    {SERVICE_PRICING.map((service) => (
                       <tr
-                        key={feature}
+                        key={service.name}
                         className="border-b border-white/5 last:border-0 hover:bg-white/[0.02] transition-colors"
                       >
-                        <td className="py-3.5 px-6 text-navy-200 font-medium">{feature}</td>
-                        <td className="py-3.5 px-6 text-center text-navy-400">
-                          {free === "\u2713" ? (
-                            <Check size={16} className="text-brand-400 inline" />
-                          ) : (
-                            free
-                          )}
+                        <td className="py-3.5 px-6 text-navy-200 font-medium">{service.name}</td>
+                        <td className="py-3.5 px-6 text-right text-brand-400 font-semibold">
+                          {service.price}
                         </td>
-                        <td className="py-3.5 px-6 text-center text-white bg-brand-500/[0.03]">
-                          {pro === "\u2713" ? (
-                            <Check size={16} className="text-brand-400 inline" />
-                          ) : (
-                            pro
-                          )}
-                        </td>
-                        <td className="py-3.5 px-6 text-center text-navy-300">
-                          {enterprise === "\u2713" ? (
-                            <Check size={16} className="text-brand-400 inline" />
-                          ) : (
-                            enterprise
-                          )}
+                        <td className="py-3.5 px-6 text-right text-navy-400">
+                          {service.unit}
                         </td>
                       </tr>
                     ))}
@@ -197,44 +149,72 @@ export default function PricingPage() {
         </div>
       </section>
 
+      {/* Usage Calculator */}
+      <section className="py-24">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <UsageCalculator />
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* FAQ section */}
-      <section className="py-16 bg-navy-900/30">
+      <section className="py-24 bg-navy-900/30">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12">
-            <h2 className="text-2xl font-bold text-white">
+            <h2 className="text-3xl font-bold text-white">
               Frequently Asked <span className="gradient-text">Questions</span>
             </h2>
           </AnimatedSection>
 
-          <div className="space-y-4">
-            {[
-              {
-                q: "Can I switch plans at any time?",
-                a: "Yes. Upgrade or downgrade instantly from your dashboard. Pro-rated billing is handled automatically.",
-              },
-              {
-                q: "What counts as a \"property\"?",
-                a: "Each unique address or parcel ID counts as one property. Re-running analyses on the same property doesn't count again.",
-              },
-              {
-                q: "Is there a long-term contract?",
-                a: "No. All plans are month-to-month. Enterprise customers can opt for annual billing with a discount.",
-              },
-              {
-                q: "How accurate is the satellite data?",
-                a: "We use 10-30m resolution satellite imagery from Sentinel, Landsat, and MODIS, processed through Google Earth Engine with 50+ validated risk models.",
-              },
-            ].map((faq, i) => (
-              <AnimatedSection key={faq.q} delay={i * 0.08}>
-                <div className="glass rounded-xl p-6">
-                  <h3 className="font-semibold text-white">{faq.q}</h3>
-                  <p className="mt-2 text-sm text-navy-300 leading-relaxed">
-                    {faq.a}
-                  </p>
+          <div className="space-y-3">
+            {PRICING_FAQ.map((faq, i) => (
+              <AnimatedSection key={faq.q} delay={i * 0.05}>
+                <div
+                  className="glass rounded-xl overflow-hidden border border-white/5 hover:border-brand-500/20 transition-colors cursor-pointer"
+                  onClick={() => setOpenFaqIndex(openFaqIndex === i ? null : i)}
+                >
+                  <div className="flex items-center justify-between p-5">
+                    <h3 className="font-semibold text-white pr-4">{faq.q}</h3>
+                    {openFaqIndex === i ? (
+                      <ChevronUp size={18} className="text-brand-400 flex-shrink-0" />
+                    ) : (
+                      <ChevronDown size={18} className="text-navy-400 flex-shrink-0" />
+                    )}
+                  </div>
+                  {openFaqIndex === i && (
+                    <div className="px-5 pb-5 pt-0">
+                      <p className="text-sm text-navy-300 leading-relaxed">
+                        {faq.a}
+                      </p>
+                    </div>
+                  )}
                 </div>
               </AnimatedSection>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Enterprise CTA */}
+      <section className="py-24">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="rounded-2xl bg-gradient-to-br from-brand-600/30 via-brand-500/20 to-navy-900 p-8 sm:p-12 text-center border border-brand-500/20">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Need Custom SLAs?
+              </h2>
+              <p className="mt-4 text-navy-300 max-w-lg mx-auto">
+                Large portfolios, volume discounts, dedicated support, and custom data residency options available.
+              </p>
+              <Link
+                href="mailto:sales@terracube.io?subject=Enterprise%20Inquiry"
+                className="mt-6 inline-block rounded-lg bg-brand-500 px-8 py-3 text-base font-semibold text-white hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20"
+              >
+                Book Demo
+              </Link>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
