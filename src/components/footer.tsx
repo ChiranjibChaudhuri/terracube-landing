@@ -4,9 +4,16 @@ import { BrandLogo } from "./brand-logo";
 
 const footerLinks = [
   { label: "Marketplace", href: "/marketplace" },
-  { label: "About", href: "/about" },
+  { label: "Use Cases", href: "/use-cases" },
+  { label: "Data Sources", href: "/data-sources" },
   { label: "Pricing", href: "/pricing" },
   { label: "Features", href: "/#features" },
+];
+
+const companyLinks = [
+  { label: "About", href: "/about" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Security", href: "/security" },
 ];
 
 const legalLinks = [
@@ -19,9 +26,9 @@ export default function Footer() {
     <footer className="border-t border-white/5 bg-navy-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         {/* Main footer */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand column */}
-          <div className="md:col-span-2">
+          <div className="lg:col-span-2">
             <Link href="/">
               <BrandLogo />
             </Link>
@@ -47,6 +54,20 @@ export default function Footer() {
             <h4 className="text-sm font-semibold text-white mb-3">Product</h4>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-navy-400 hover:text-brand-400 transition-colors">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company links */}
+          <div>
+            <h4 className="text-sm font-semibold text-white mb-3">Company</h4>
+            <ul className="space-y-2">
+              {companyLinks.map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-sm text-navy-400 hover:text-brand-400 transition-colors">
                     {link.label}

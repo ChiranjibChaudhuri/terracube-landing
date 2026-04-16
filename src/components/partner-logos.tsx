@@ -6,8 +6,8 @@ const partners = [
   { name: "NASA", letterSpacing: "0.3em" },
   { name: "ESA", letterSpacing: "0.3em" },
   { name: "NOAA", letterSpacing: "0.25em" },
-  { name: "Copernicus", letterSpacing: "0.15em" },
-  { name: "JAXA", letterSpacing: "0.25em" },
+  { name: "ECMWF", letterSpacing: "0.2em" },
+  { name: "Google Earth Engine", letterSpacing: "0.1em" },
 ];
 
 export default function PartnerLogos() {
@@ -16,7 +16,7 @@ export default function PartnerLogos() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <p className="text-center text-xs uppercase tracking-[0.2em] text-navy-500 mb-8">
-            Trusted data sources &amp; partners
+            Trusted by leading insurers and investors
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-16">
             {partners.map((partner) => (
@@ -54,7 +54,7 @@ export default function PartnerLogos() {
                       <path d="M6 14 Q9 10 12 14 Q15 18 18 14" />
                     </>
                   )}
-                  {partner.name === "Copernicus" && (
+                  {partner.name === "ECMWF" && (
                     <>
                       <circle cx="12" cy="12" r="10" />
                       <circle cx="12" cy="12" r="6" />
@@ -65,11 +65,14 @@ export default function PartnerLogos() {
                       <line x1="18" y1="12" x2="22" y2="12" />
                     </>
                   )}
-                  {partner.name === "JAXA" && (
+                  {partner.name === "Google Earth Engine" && (
                     <>
                       <circle cx="12" cy="12" r="10" />
-                      <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(30 12 12)" />
-                      <circle cx="12" cy="12" r="2" fill="currentColor" />
+                      <path d="M12 2 L12 22" />
+                      <path d="M2 12 L22 12" />
+                      <circle cx="12" cy="12" r="4" />
+                      <path d="M8 8 L16 16" />
+                      <path d="M16 8 L8 16" />
                     </>
                   )}
                 </svg>
