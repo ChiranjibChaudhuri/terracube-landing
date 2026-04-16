@@ -1,11 +1,24 @@
 export const BRAND_NAME = "TerraCube";
 
-export const NAV_LINKS = [
-  { label: "Marketplace", href: "/marketplace" },
-  { label: "Features", href: "/#features" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "About", href: "/about" },
-];
+export const NAV_LINKS = {
+  product: {
+    label: 'Product',
+    children: [
+      { label: 'Marketplace', href: '/marketplace' },
+      { label: 'Data Sources', href: '/data-sources' },
+      { label: 'Security', href: '/security' },
+    ],
+  },
+  useCases: { label: 'Use Cases', href: '/use-cases' },
+  pricing: { label: 'Pricing', href: '/pricing' },
+  about: {
+    label: 'About',
+    children: [
+      { label: 'Company', href: '/about' },
+      { label: 'Case Studies', href: '/case-studies' },
+    ],
+  },
+} as const;
 
 export const FEATURES = [
   {
@@ -104,11 +117,11 @@ export const HOW_IT_WORKS = [
 ];
 
 export const STATS = [
-  { value: "10,000+", label: "Properties Underwritten" },
-  { value: "34", label: "Risk Indices (21 GFS + 13 Satellite)" },
-  { value: "12", label: "Earth Engine Services" },
-  { value: "<5 min", label: "Per-Property Analysis" },
-];
+  { value: '$2B+', label: 'Assets Analyzed' },
+  { value: '34', label: 'Risk Indices' },
+  { value: '12', label: 'Earth Engine Services' },
+  { value: '<5 min', label: 'Per-Property Analysis' },
+] as const;
 
 export const TESTIMONIALS = [
   {
@@ -137,62 +150,49 @@ export const TESTIMONIALS = [
   },
 ];
 
-export const PRICING_TIERS = [
-  {
-    name: "Free",
-    price: "$0",
-    period: "forever",
-    description: "Environmental risk scores for up to 5 properties",
-    features: [
-      { text: "Up to 5 properties", included: true },
-      { text: "Basic risk scores", included: true },
-      { text: "Monthly reports", included: true },
-      { text: "Email support", included: true },
-      { text: "Full risk + energy models", included: false },
-      { text: "AI Agent access", included: false },
-      { text: "Workflow automation", included: false },
-      { text: "API access", included: false },
-    ],
-    cta: "Get Started Free",
+export const PRICING_MODEL = {
+  free: {
+    name: 'Free',
+    price: '$0',
+    period: 'forever',
+    description: '5 properties, core risk indices',
+    features: ['5 properties', 'GFS Risk (21 indices)', 'Satellite Risk (13 indices)', 'Monthly risk reports', 'Community support'],
+    cta: 'Start Free',
+    ctaHref: '/auth/register',
     highlighted: false,
   },
-  {
-    name: "Pro",
-    price: "$49",
-    period: "/mo",
-    description: "Full underwriting stack for growing portfolios",
-    features: [
-      { text: "Up to 50 properties", included: true },
-      { text: "Full risk + energy models", included: true },
-      { text: "Weekly reports", included: true },
-      { text: "Priority support", included: true },
-      { text: "AI Agent access", included: true },
-      { text: "Workflow automation", included: true },
-      { text: "API access", included: true },
-      { text: "Custom models", included: false },
-    ],
-    cta: "Start Pro Trial",
+  payAsYouGo: {
+    name: 'Pay As You Go',
+    price: 'From $0.03',
+    period: 'per API call',
+    description: 'Per-API-call pricing for every service',
+    features: ['Unlimited properties', 'All marketplace services', 'Per-call billing', 'API access', 'Email support', 'Weekly reports'],
+    cta: 'Start Free',
+    ctaHref: '/auth/register',
     highlighted: true,
   },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    description: "Custom underwriting for institutional portfolios",
-    features: [
-      { text: "Unlimited properties", included: true },
-      { text: "Custom risk models", included: true },
-      { text: "Real-time reports", included: true },
-      { text: "Dedicated support + SLA", included: true },
-      { text: "AI Agent access", included: true },
-      { text: "Advanced automation", included: true },
-      { text: "Full API access", included: true },
-      { text: "On-premise deployment", included: true },
-    ],
-    cta: "Contact Sales",
+  enterprise: {
+    name: 'Enterprise',
+    price: 'Custom',
+    period: '',
+    description: 'Custom agreements for large portfolios',
+    features: ['Volume discounts', 'Dedicated support', 'Custom SLAs', 'Data residency options', 'SSO/SAML', 'Real-time webhooks'],
+    cta: 'Book Demo',
+    ctaHref: 'mailto:sales@terracube.io',
     highlighted: false,
   },
-];
+} as const;
+
+export const SERVICE_PRICING = [
+  { name: 'GFS Weather Risk', price: '$0.05', unit: 'per point query' },
+  { name: 'Satellite Risk', price: '$0.08', unit: 'per point query' },
+  { name: 'Energy Estimation', price: '$0.03', unit: 'per property' },
+  { name: 'Short-Term Forecast', price: '$0.10', unit: 'per timeseries' },
+  { name: 'Climate Projections', price: '$0.15', unit: 'per scenario' },
+  { name: 'Wildfire Risk', price: '$0.05', unit: 'per point' },
+  { name: 'ESG Scoring', price: '$0.06', unit: 'per property' },
+  { name: 'Parametric Insurance', price: '$0.04', unit: 'per trigger check' },
+] as const;
 
 export const MARKETPLACE_SERVICES = [
   {
@@ -300,3 +300,107 @@ export const MARKETPLACE_SERVICES = [
     price: "Pro+",
   },
 ];
+
+export const USE_CASES = [
+  {
+    role: 'Underwriters',
+    color: '#14B8A6',
+    headline: 'Accept, reject, or price with data',
+    description: 'Per-property risk scores replace gut-feel decisions. 34 risk indices from satellite and weather forecast data give you the full exposure picture.',
+    problem: 'Traditional underwriting misses climate exposure that satellites can see.',
+    solution: '34 risk indices per property — flood, wildfire, heat, wind, and 30 more. Drill down to the specific hazard driving risk.',
+  },
+  {
+    role: 'Portfolio Managers',
+    color: '#F59E0B',
+    headline: 'Monitor trends, spot concentration',
+    description: 'Portfolio-wide risk trends and deteriorating asset alerts keep you ahead of emerging climate threats.',
+    problem: "You can't manage risk you can't see trending.",
+    solution: 'Portfolio-wide time series forecasts, deteriorating asset alerts, and concentration risk visualization.',
+  },
+  {
+    role: 'Executives',
+    color: '#A78BFA',
+    headline: 'Portfolio health at a glance',
+    description: 'KPI dashboards, one-click reports, and board-ready portfolio health summaries in minutes.',
+    problem: 'Board reporting on climate exposure takes weeks of manual analysis.',
+    solution: 'One-glance KPI dashboard, PDF reports, portfolio health summary. Board-ready in minutes.',
+  },
+] as const;
+
+export const CASE_STUDIES = [
+  {
+    industry: 'Insurance',
+    company: 'National Reinsurance Corp',
+    headline: '$4.2M in avoided losses',
+    challenge: 'Traditional flood models missed exposure in a 200-property portfolio across the Eastern seaboard.',
+    solution: 'TerraCube satellite risk analysis using Sentinel-1 SAR and precipitation indices identified 12 high-risk properties traditional models classified as low-risk.',
+    result: '$4.2M in avoided losses when flooding occurred 6 months later. Portfolio now monitored continuously.',
+    quote: "TerraCube's analysis caught flood exposure that our traditional models missed entirely.",
+    quoteName: 'Sarah Chen',
+    quoteTitle: 'VP Risk, National Reinsurance Corp',
+    stat: '$4.2M',
+    statLabel: 'Losses Avoided',
+  },
+  {
+    industry: 'Real Estate Investment',
+    company: 'Meridian Real Estate Fund',
+    headline: '2 weeks to 5 minutes',
+    challenge: 'Climate due diligence for acquisitions took 2 weeks per property, limiting the number of deals the team could evaluate.',
+    solution: 'Automated 34-index analysis integrated into the acquisition pipeline via API. Per-property reports generated on demand.',
+    result: 'Analysis time reduced from 2 weeks to 5 minutes. 3x more properties evaluated per quarter.',
+    quote: 'Cut our per-property underwriting cost by $15K and reduced analysis time from 2 weeks to 5 minutes.',
+    quoteName: 'Maria Rodriguez',
+    quoteTitle: 'CTO, Meridian Real Estate Fund',
+    stat: '85%',
+    statLabel: 'Faster Analysis',
+  },
+  {
+    industry: 'Mortgage Lending',
+    company: 'Pacific Property Insurance',
+    headline: 'Proactive wildfire risk management',
+    challenge: 'No systematic way to monitor climate risk across a 5,000-loan residential mortgage portfolio.',
+    solution: 'Portfolio monitoring with satellite indices and threshold crossing alerts. Automated weekly risk reports.',
+    result: 'Identified wildfire-exposed properties before fire season. Proactive borrower communication prevented claims.',
+    quote: 'We validated Hurricane Milton impacts within 48 hours using satellite risk indices. Game changer for claims.',
+    quoteName: 'James Park',
+    quoteTitle: 'Head of Claims, Pacific Property Insurance',
+    stat: '3x',
+    statLabel: 'Coverage Improvement',
+  },
+] as const;
+
+export const DATA_SOURCES = [
+  { name: 'Sentinel-1', provider: 'ESA', measures: 'SAR radar, flood detection', resolution: '10m', frequency: '12-day revisit', icon: 'Satellite' },
+  { name: 'Sentinel-2', provider: 'ESA', measures: 'Optical, vegetation, land use', resolution: '10m', frequency: '5-day revisit', icon: 'Layers' },
+  { name: 'Sentinel-5P', provider: 'ESA', measures: 'Atmospheric, air quality', resolution: '7km', frequency: 'Daily', icon: 'Wind' },
+  { name: 'MODIS', provider: 'NASA', measures: 'Land surface temp, burned area', resolution: '250m-1km', frequency: 'Daily', icon: 'Thermometer' },
+  { name: 'VIIRS', provider: 'NASA/NOAA', measures: 'Nighttime lights, fire detection', resolution: '375m', frequency: 'Daily', icon: 'Flame' },
+  { name: 'NOAA GFS', provider: 'NOAA', measures: 'Weather forecast, 21 risk indices', resolution: '28km', frequency: '6-hourly', icon: 'CloudRain' },
+  { name: 'ERA5', provider: 'ECMWF', measures: 'Climate reanalysis', resolution: '30km', frequency: 'Hourly', icon: 'Clock' },
+  { name: 'CMIP6', provider: 'WCRP', measures: 'Climate projections, SSP scenarios', resolution: 'Variable', frequency: 'Decadal', icon: 'TrendingUp' },
+  { name: 'SRTM DEM', provider: 'NASA', measures: 'Elevation, terrain analysis', resolution: '30m', frequency: 'Static', icon: 'Mountain' },
+  { name: 'SMAP', provider: 'NASA', measures: 'Soil moisture monitoring', resolution: '9km', frequency: '3-day revisit', icon: 'Droplets' },
+] as const;
+
+export const SECURITY_FEATURES = [
+  { title: 'Data Encryption', description: 'TLS 1.3 for all data in transit. AES-256 encryption for data at rest. Zero plain-text storage of credentials.', icon: 'Lock' },
+  { title: 'Authentication', description: 'OAuth 2.0 with JWT tokens. API key rotation support. Rate limiting at 30 requests per minute per key.', icon: 'Key' },
+  { title: 'Data Residency', description: 'Processing on Google Cloud Platform. Data stored in US-East and EU-West regions. Custom residency for enterprise plans.', icon: 'Globe' },
+  { title: 'Access Control', description: 'Role-based access control (RBAC). Full audit logging of all API calls. IP allowlisting for enterprise accounts.', icon: 'Shield' },
+  { title: 'SLA & Uptime', description: '99.9% uptime commitment. 4-hour response time for critical issues. Dedicated support channel for enterprise.', icon: 'Activity' },
+  { title: 'Responsible Disclosure', description: 'Security vulnerability reporting program. Contact security@terracube.io for disclosures.', icon: 'AlertTriangle' },
+] as const;
+
+export const COMPLIANCE_BADGES = ['SOC 2 Type II', 'GDPR Compliant', 'ISO 27001'] as const;
+
+export const PRICING_FAQ = [
+  { q: 'How does pay-per-call pricing work?', a: 'Each API call to a service is billed at the listed price. You only pay for what you use. No minimum commitments.' },
+  { q: 'What counts as a "property"?', a: 'A property is a unique lat/lng coordinate pair. Each coordinate queried through a service counts as one API call.' },
+  { q: 'Can I switch between plans?', a: 'Yes, you can upgrade or downgrade at any time. The free tier is always available with 5 properties.' },
+  { q: 'How accurate is the satellite data?', a: 'Our indices are derived from Sentinel (10m), MODIS (250m-1km), and GFS (28km) data. Accuracy varies by index and is documented per service.' },
+  { q: 'Do you offer volume discounts?', a: 'Yes. Contact our sales team for bulk pricing on 1,000+ properties or custom enterprise agreements.' },
+  { q: 'What is the API rate limit?', a: '30 requests per minute on the free tier. Higher limits available on pay-as-you-go and enterprise plans.' },
+  { q: 'How long is data retained?', a: 'Analysis results are cached for 3 hours (matching GFS update frequency). Historical snapshots available with the Historical Trends service.' },
+  { q: 'Can I integrate with my existing systems?', a: 'Yes. All services are available via REST API. We support webhooks for real-time alerts on enterprise plans.' },
+] as const;
