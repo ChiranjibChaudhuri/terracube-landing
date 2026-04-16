@@ -12,14 +12,14 @@ const iconMap: Record<string, any> = {
 
 export default function SecurityPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+    <div className="min-h-screen bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950">
       {/* Hero */}
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Enterprise-Grade Security by Default
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-navy-400 max-w-3xl mx-auto">
             Built for financial institutions, insurance carriers, and real estate funds. SOC 2, GDPR compliant, with 99.9% uptime SLA.
           </p>
         </div>
@@ -68,7 +68,7 @@ export default function SecurityPage() {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-400 leading-relaxed">
+                    <p className="text-navy-400 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -86,7 +86,7 @@ export default function SecurityPage() {
             <h2 className="text-3xl font-bold text-white mb-4">
               Questions about security?
             </h2>
-            <p className="text-lg text-gray-400 mb-8">
+            <p className="text-lg text-navy-400 mb-8">
               Talk to our team about enterprise security requirements, custom SLAs, and data residency options.
             </p>
             <a

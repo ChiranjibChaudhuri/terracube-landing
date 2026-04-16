@@ -17,14 +17,14 @@ const iconMap: Record<string, any> = {
 
 export default function DataSourcesPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+    <div className="min-h-screen bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950">
       {/* Hero */}
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             World-Class Satellite and Weather Data
           </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+          <p className="text-xl text-navy-400 max-w-3xl mx-auto">
             10 data sources from NASA, ESA, NOAA, and ECMWF — powering 34 risk indices with real-time satellite and weather data.
           </p>
         </div>
@@ -54,24 +54,24 @@ export default function DataSourcesPage() {
                     <h3 className="font-bold text-white mb-2">{source.name}</h3>
 
                     {/* Provider Badge */}
-                    <div className="inline-block px-2 py-1 rounded-md bg-white/5 text-xs text-gray-400 mb-3">
+                    <div className="inline-block px-2 py-1 rounded-md bg-white/5 text-xs text-navy-400 mb-3">
                       {source.provider}
                     </div>
 
                     {/* Measures */}
-                    <p className="text-sm text-gray-400 mb-4">
+                    <p className="text-sm text-navy-400 mb-4">
                       {source.measures}
                     </p>
 
                     {/* Specs Row */}
-                    <div className="flex flex-col gap-1 text-xs text-gray-500">
+                    <div className="flex flex-col gap-1 text-xs text-navy-500">
                       <div className="flex justify-between">
                         <span>Resolution:</span>
-                        <span className="text-gray-400">{source.resolution}</span>
+                        <span className="text-navy-400">{source.resolution}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Frequency:</span>
-                        <span className="text-gray-400">{source.frequency}</span>
+                        <span className="text-navy-400">{source.frequency}</span>
                       </div>
                     </div>
                   </div>
@@ -89,7 +89,7 @@ export default function DataSourcesPage() {
             <h2 className="text-3xl font-bold text-white mb-4">
               Powered by Google Earth Engine
             </h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-navy-400 max-w-2xl mx-auto">
               All satellite and weather data is processed on Google Earth Engine — the world's most powerful planetary-scale geospatial analysis platform. Petabyte-scale datasets, analyzed in seconds.
             </p>
           </div>

@@ -12,16 +12,16 @@ const industryColors: Record<string, string> = {
 
 export default function CaseStudiesPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <main className="min-h-screen bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900">
       {/* Hero Section with Stats */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-24 sm:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 py-24 sm:py-32">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <AnimatedSection className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
               Real Results from Real Portfolios
             </h1>
-            <p className="mx-auto max-w-2xl text-lg leading-8 text-gray-300 mb-12">
+            <p className="mx-auto max-w-2xl text-lg leading-8 text-navy-300 mb-12">
               See how leading firms use TerraCube to identify risks, prevent losses, and make faster decisions.
             </p>
 
@@ -31,12 +31,12 @@ export default function CaseStudiesPage() {
                 <AnimatedSection
                   key={study.company}
                   delay={0.2 + index * 0.1}
-                  className="rounded-2xl bg-gradient-to-br from-teal-500/20 to-teal-600/10 p-6 backdrop-blur-sm border border-teal-500/20"
+                  className="rounded-2xl bg-gradient-to-br from-brand-500/20 to-brand-600/10 p-6 backdrop-blur-sm border border-brand-500/20"
                 >
-                  <div className="text-4xl font-bold text-teal-400 mb-2">
+                  <div className="text-4xl font-bold text-brand-400 mb-2">
                     {study.stat}
                   </div>
-                  <div className="text-sm text-gray-300">
+                  <div className="text-sm text-navy-300">
                     {study.statLabel}
                   </div>
                 </AnimatedSection>
@@ -67,7 +67,7 @@ export default function CaseStudiesPage() {
               </div>
 
               {/* Company Name */}
-              <h3 className="text-xl font-semibold text-gray-400 mb-3">
+              <h3 className="text-xl font-semibold text-navy-400 mb-3">
                 {study.company}
               </h3>
 
@@ -79,25 +79,25 @@ export default function CaseStudiesPage() {
               {/* Content */}
               <div className="space-y-6 mb-8">
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-2">
+                  <h4 className="text-sm font-semibold text-navy-400 uppercase tracking-wide mb-2">
                     Challenge
                   </h4>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-navy-300 leading-relaxed">
                     {study.challenge}
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wide mb-2">
+                  <h4 className="text-sm font-semibold text-navy-400 uppercase tracking-wide mb-2">
                     Solution
                   </h4>
-                  <p className="text-gray-300 leading-relaxed">
+                  <p className="text-navy-300 leading-relaxed">
                     {study.solution}
                   </p>
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-teal-400 uppercase tracking-wide mb-2">
+                  <h4 className="text-sm font-semibold text-brand-400 uppercase tracking-wide mb-2">
                     Result
                   </h4>
                   <p className="text-white font-semibold leading-relaxed">
@@ -107,11 +107,11 @@ export default function CaseStudiesPage() {
               </div>
 
               {/* Quote */}
-              <blockquote className="border-l-4 border-teal-500 pl-6 py-4 bg-gradient-to-r from-teal-500/10 to-transparent rounded-r-lg mb-4">
-                <p className="text-lg text-gray-200 italic mb-4">
+              <blockquote className="border-l-4 border-brand-500 pl-6 py-4 bg-gradient-to-r from-brand-500/10 to-transparent rounded-r-lg mb-4">
+                <p className="text-lg text-navy-200 italic mb-4">
                   "{study.quote}"
                 </p>
-                <footer className="text-sm text-gray-400">
+                <footer className="text-sm text-navy-400">
                   <span className="font-semibold text-white">{study.quoteName}</span>
                   <br />
                   {study.quoteTitle}
@@ -120,7 +120,7 @@ export default function CaseStudiesPage() {
 
               {/* Divider (except for last item) */}
               {index < CASE_STUDIES.length - 1 && (
-                <div className="mt-24 border-t border-gray-700"></div>
+                <div className="mt-24 border-t border-navy-700"></div>
               )}
             </AnimatedSection>
           ))}
@@ -128,7 +128,7 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-24 sm:py-32 bg-gradient-to-b from-gray-900 to-gray-950">
+      <section className="py-24 sm:py-32 bg-gradient-to-b from-navy-900 to-navy-950">
         <AnimatedSection>
           <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-8">
@@ -136,7 +136,7 @@ export default function CaseStudiesPage() {
             </h2>
             <Link
               href="mailto:sales@terracube.io"
-              className="inline-flex items-center justify-center rounded-lg bg-teal-500 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-teal-400 transition-colors"
+              className="inline-flex items-center justify-center rounded-lg bg-brand-500 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-brand-400 transition-colors"
             >
               Book Demo
             </Link>

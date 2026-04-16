@@ -6,16 +6,16 @@ import { USE_CASES } from '@/lib/constants';
 
 export default function UseCasesPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+    <main className="min-h-screen bg-gradient-to-b from-navy-900 via-navy-800 to-navy-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 py-24 sm:py-32">
+      <section className="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 py-24 sm:py-32">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <AnimatedSection className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
               Built for Climate Risk Professionals
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-300">
+            <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-navy-300">
               From underwriting decisions to board-level reporting, TerraCube delivers the climate intelligence your team needs.
             </p>
           </AnimatedSection>
@@ -50,14 +50,14 @@ export default function UseCasesPage() {
                   </h2>
                   <div className="space-y-4">
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-300 mb-2">The Challenge</h3>
-                      <p className="text-gray-400 leading-relaxed">
+                      <h3 className="text-lg font-semibold text-navy-300 mb-2">The Challenge</h3>
+                      <p className="text-navy-400 leading-relaxed">
                         {useCase.problem}
                       </p>
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold text-white mb-2">The Solution</h3>
-                      <p className="text-gray-100 leading-relaxed">
+                      <p className="text-navy-100 leading-relaxed">
                         {useCase.solution}
                       </p>
                     </div>
@@ -73,7 +73,7 @@ export default function UseCasesPage() {
                       borderColor: `${useCase.color}30`
                     }}
                   >
-                    <div className="aspect-[4/3] rounded-lg bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 flex items-center justify-center">
+                    <div className="aspect-[4/3] rounded-lg bg-gradient-to-br from-navy-800 to-navy-900 border border-navy-700 flex items-center justify-center">
                       <div className="text-center space-y-4 p-8">
                         <div
                           className="w-16 h-16 mx-auto rounded-full flex items-center justify-center"
@@ -90,7 +90,7 @@ export default function UseCasesPage() {
                           </svg>
                         </div>
                         <h3 className="text-xl font-semibold text-white">{useCase.role} Dashboard</h3>
-                        <p className="text-sm text-gray-400">{useCase.description}</p>
+                        <p className="text-sm text-navy-400">{useCase.description}</p>
                       </div>
                     </div>
                   </div>
@@ -102,7 +102,7 @@ export default function UseCasesPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-24 sm:py-32 bg-gradient-to-b from-gray-900 to-gray-950">
+      <section className="py-24 sm:py-32 bg-gradient-to-b from-navy-900 to-navy-950">
         <AnimatedSection>
           <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-8">
@@ -111,7 +111,7 @@ export default function UseCasesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/auth/register"
-                className="inline-flex items-center justify-center rounded-lg bg-teal-500 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-teal-400 transition-colors"
+                className="inline-flex items-center justify-center rounded-lg bg-brand-500 px-8 py-3 text-base font-semibold text-white shadow-sm hover:bg-brand-400 transition-colors"
               >
                 Start Free
               </Link>
