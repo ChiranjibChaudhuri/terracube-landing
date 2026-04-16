@@ -5,7 +5,7 @@ import { Check, X, Shield, Zap, Globe } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import AnimatedSection from "@/components/animated-section";
-import { PRICING_TIERS } from "@/lib/constants";
+import { PRICING_MODEL } from "@/lib/constants";
 
 export default function PricingPage() {
   return (
@@ -50,7 +50,7 @@ export default function PricingPage() {
       <section className="py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-6 items-start">
-            {PRICING_TIERS.map((tier, i) => (
+            {Object.values(PRICING_MODEL).map((tier, i) => (
               <AnimatedSection key={tier.name} delay={i * 0.1}>
                 <div
                   className={`rounded-xl p-6 h-full flex flex-col relative ${
@@ -81,22 +81,12 @@ export default function PricingPage() {
 
                   <ul className="space-y-3 flex-1">
                     {tier.features.map((feature) => (
-                      <li key={feature.text} className="flex items-start gap-3">
-                        {feature.included ? (
-                          <div className="w-5 h-5 rounded-full bg-brand-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <Check size={12} className="text-brand-400" />
-                          </div>
-                        ) : (
-                          <div className="w-5 h-5 rounded-full bg-white/[0.03] flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <X size={12} className="text-navy-600" />
-                          </div>
-                        )}
-                        <span
-                          className={`text-sm ${
-                            feature.included ? "text-navy-200" : "text-navy-600"
-                          }`}
-                        >
-                          {feature.text}
+                      <li key={feature} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-brand-500/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check size={12} className="text-brand-400" />
+                        </div>
+                        <span className="text-sm text-navy-200">
+                          {feature}
                         </span>
                       </li>
                     ))}

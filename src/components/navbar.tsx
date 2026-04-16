@@ -68,15 +68,19 @@ export default function Navbar() {
                 );
               }
 
-              return (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-sm text-navy-300 hover:text-white transition-colors"
-                >
-                  {item.label}
-                </Link>
-              );
+              if ("href" in item) {
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="text-sm text-navy-300 hover:text-white transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                );
+              }
+
+              return null;
             })}
 
             <div className="flex items-center gap-3 ml-2">
@@ -169,16 +173,20 @@ export default function Navbar() {
                   );
                 }
 
-                return (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block text-sm text-navy-300 hover:text-brand-400 transition-colors py-2"
-                  >
-                    {item.label}
-                  </Link>
-                );
+                if ("href" in item) {
+                  return (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="block text-sm text-navy-300 hover:text-brand-400 transition-colors py-2"
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                }
+
+                return null;
               })}
 
               <div className="pt-4 space-y-2 border-t border-white/5 mt-4">
