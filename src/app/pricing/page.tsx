@@ -20,9 +20,9 @@ export default function PricingPage() {
       <section className="pt-32 pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
-              Simple, Transparent{" "}
-              <span className="gradient-text">Pricing</span>
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold">
+              Simple, transparent{" "}
+              <span className="gradient-text">pricing</span>
             </h1>
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
@@ -100,8 +100,8 @@ export default function PricingPage() {
       <section className="py-24 bg-navy-900/30">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white">
-              Service <span className="gradient-text">Pricing</span>
+            <h2 className="font-display text-3xl font-bold text-white">
+              Service <span className="gradient-text">pricing</span>
             </h2>
             <p className="mt-4 text-navy-400">
               Per-API-call pricing for every service
@@ -162,8 +162,8 @@ export default function PricingPage() {
       <section className="py-24 bg-navy-900/30">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white">
-              Frequently Asked <span className="gradient-text">Questions</span>
+            <h2 className="font-display text-3xl font-bold text-white">
+              Frequently asked <span className="gradient-text">questions</span>
             </h2>
           </AnimatedSection>
 
@@ -201,8 +201,8 @@ export default function PricingPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="rounded-2xl bg-gradient-to-br from-brand-600/30 via-brand-500/20 to-navy-900 p-8 sm:p-12 text-center border border-brand-500/20">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
-                Need Custom SLAs?
+              <h2 className="font-display text-2xl sm:text-3xl font-bold text-white">
+                Need custom SLAs?
               </h2>
               <p className="mt-4 text-navy-300 max-w-lg mx-auto">
                 Large portfolios, volume discounts, dedicated support, and custom data residency options available.

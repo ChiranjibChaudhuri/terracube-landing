@@ -21,8 +21,8 @@ export default function DataSourcesPage() {
       {/* Hero */}
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            World-Class Satellite and Weather Data
+          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">
+            World-class satellite and weather data
           </h1>
           <p className="text-xl text-navy-400 max-w-3xl mx-auto">
             10 data sources from NASA, ESA, NOAA, and ECMWF — powering 34 risk indices with real-time satellite and weather data.
@@ -86,7 +86,7 @@ export default function DataSourcesPage() {
       <section className="pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-12 backdrop-blur-sm">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="font-display text-3xl font-bold text-white mb-4">
               Powered by Google Earth Engine
             </h2>
             <p className="text-lg text-navy-400 max-w-2xl mx-auto">

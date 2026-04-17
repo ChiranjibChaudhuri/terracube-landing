@@ -16,8 +16,8 @@ export default function SecurityPage() {
       {/* Hero */}
       <section className="pt-32 pb-20 px-6">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Enterprise-Grade Security by Default
+          <h1 className="font-display text-5xl md:text-6xl font-bold text-white mb-6">
+            Enterprise-grade security by default
           </h1>
           <p className="text-xl text-navy-400 max-w-3xl mx-auto">
             Built for financial institutions, insurance carriers, and real estate funds. SOC 2, GDPR compliant, with 99.9% uptime SLA.
@@ -83,7 +83,7 @@ export default function SecurityPage() {
       <section className="pb-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] p-12 backdrop-blur-sm">
-            <h2 className="text-3xl font-bold text-white mb-4">
+            <h2 className="font-display text-3xl font-bold text-white mb-4">
               Questions about security?
             </h2>
             <p className="text-lg text-navy-400 mb-8">

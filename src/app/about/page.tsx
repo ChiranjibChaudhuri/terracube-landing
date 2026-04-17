@@ -108,7 +108,7 @@ export default function AboutPage() {
       <section className="pt-32 pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold">
               About <span className="gradient-text">TerraCube</span>
             </h1>
           </AnimatedSection>
@@ -147,8 +147,8 @@ export default function AboutPage() {
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
             <div className="flex-1">
               <AnimatedSection>
-                <h2 className="text-3xl font-bold">
-                  Our <span className="gradient-text">Mission</span>
+                <h2 className="font-display text-3xl font-bold">
+                  Our <span className="gradient-text">mission</span>
                 </h2>
                 <p className="mt-6 text-navy-300 leading-relaxed">
                   The real estate industry underwrites trillions of dollars in
@@ -176,8 +176,8 @@ export default function AboutPage() {
             <div className="flex-1 w-full lg:w-auto">
               <AnimatedSection delay={0.15}>
                 <div className="glass rounded-xl p-6 border border-brand-500/10">
-                  <h3 className="text-sm font-semibold text-brand-400 uppercase tracking-wider mb-6">
-                    Our Journey
+                  <h3 className="text-sm font-semibold text-brand-400 mb-6">
+                    Our journey
                   </h3>
                   <div className="relative">
                     <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-brand-500/60 via-brand-400/30 to-transparent" />
@@ -206,8 +206,8 @@ export default function AboutPage() {
       <section className="py-24 bg-navy-900/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
-            <h2 className="text-3xl font-bold">
-              Powered by <span className="gradient-text">Science</span>
+            <h2 className="font-display text-3xl font-bold">
+              Powered by <span className="gradient-text">science</span>
             </h2>
             <p className="mt-4 text-navy-400 max-w-2xl mx-auto">
               Our technology stack combines cutting-edge satellite imagery with
@@ -219,8 +219,8 @@ export default function AboutPage() {
           <AnimatedSection delay={0.1}>
             <div className="glass rounded-xl p-8 mb-12 border border-brand-500/10">
               <div className="text-center">
-                <div className="text-sm font-semibold text-brand-400 uppercase tracking-wider mb-4">
-                  Our Architecture
+                <div className="text-sm font-semibold text-brand-400 mb-4">
+                  Our architecture
                 </div>
                 <div className="flex items-center justify-center gap-4 flex-wrap text-navy-200 text-sm sm:text-base">
                   <span className="font-mono">Satellite Data</span>
@@ -263,8 +263,8 @@ export default function AboutPage() {
           {/* Visual data sources with imagery/icons */}
           <AnimatedSection delay={0.3}>
             <div className="mt-12 glass rounded-xl p-8 border border-white/5">
-              <div className="text-sm font-semibold text-brand-400 uppercase tracking-wider text-center mb-6">
-                Data Sources We Process
+              <div className="text-sm font-semibold text-brand-400 text-center mb-6">
+                Data sources we process
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
                 {DATA_SOURCES.slice(0, 10).map((source) => (
@@ -293,8 +293,8 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
-            <h2 className="text-3xl font-bold">
-              Our <span className="gradient-text">Team</span>
+            <h2 className="font-display text-3xl font-bold">
+              Our <span className="gradient-text">team</span>
             </h2>
             <p className="mt-4 text-navy-400 max-w-2xl mx-auto">
               Climate scientists, satellite engineers, and insurance experts
@@ -337,8 +337,8 @@ export default function AboutPage() {
           {/* Investor section */}
           <AnimatedSection delay={0.6}>
             <div className="mt-16 text-center">
-              <div className="text-sm font-semibold text-brand-400 uppercase tracking-wider mb-6">
-                Backed By (Illustrative)
+              <div className="text-sm font-semibold text-brand-400 mb-6">
+                Backed by (illustrative)
               </div>
               <div className="flex flex-wrap items-center justify-center gap-8">
                 {investors.map((investor) => (
@@ -362,8 +362,8 @@ export default function AboutPage() {
       <section className="py-24 bg-navy-900/30">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold text-white">
-              See What Your Portfolio Is Really Exposed To
+            <h2 className="font-display text-3xl font-bold text-white">
+              See what your portfolio is really exposed to
             </h2>
             <p className="mt-4 text-navy-300 max-w-xl mx-auto">
               Start with 5 properties free. Get satellite-grade environmental

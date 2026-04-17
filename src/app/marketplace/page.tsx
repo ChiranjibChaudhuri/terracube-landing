@@ -140,8 +140,8 @@ export default function MarketplacePage() {
       <section className="pt-32 pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
-              <span className="gradient-text">Vault Neo</span> Marketplace
+            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold">
+              <span className="gradient-text">Vault Neo</span> marketplace
             </h1>
           </AnimatedSection>
           <AnimatedSection delay={0.15}>
@@ -261,8 +261,8 @@ export default function MarketplacePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="rounded-2xl bg-gradient-to-br from-brand-600/30 via-brand-500/20 to-navy-900 p-8 sm:p-16 text-center border border-brand-500/20">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white">
-                Start Underwriting Smarter Today
+              <h2 className="font-display text-3xl sm:text-4xl font-bold text-white">
+                Start underwriting smarter today
               </h2>
               <p className="mt-4 text-navy-300 max-w-xl mx-auto">
                 Analyze 5 properties free. See flood, wildfire, heat, and

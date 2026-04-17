@@ -12,8 +12,8 @@ export default function UseCasesPage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <AnimatedSection className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-              Built for Climate Risk Professionals
+            <h1 className="font-display text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              Built for climate risk professionals
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-navy-300">
               From underwriting decisions to board-level reporting, TerraCube delivers the climate intelligence your team needs.
@@ -45,7 +45,7 @@ export default function UseCasesPage() {
                   >
                     {useCase.role}
                   </div>
-                  <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
+                  <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
                     {useCase.headline}
                   </h2>
                   <div className="space-y-4">
@@ -105,7 +105,7 @@ export default function UseCasesPage() {
       <section className="py-24 sm:py-32 bg-gradient-to-b from-navy-900 to-navy-950">
         <AnimatedSection>
           <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-8">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl mb-8">
               Ready to see it in action?
             </h2>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

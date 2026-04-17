@@ -18,8 +18,8 @@ export default function CaseStudiesPage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <AnimatedSection className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
-              Real Results from Real Portfolios
+            <h1 className="font-display text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
+              Real results from real portfolios
             </h1>
             <p className="mx-auto max-w-2xl text-lg leading-8 text-navy-300 mb-12">
               See how leading firms use TerraCube to identify risks, prevent losses, and make faster decisions.
@@ -72,14 +72,14 @@ export default function CaseStudiesPage() {
               </h3>
 
               {/* Headline */}
-              <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-8">
+              <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl mb-8">
                 {study.headline}
               </h2>
 
               {/* Content */}
               <div className="space-y-6 mb-8">
                 <div>
-                  <h4 className="text-sm font-semibold text-navy-400 uppercase tracking-wide mb-2">
+                  <h4 className="text-sm font-semibold text-navy-400 mb-2">
                     Challenge
                   </h4>
                   <p className="text-navy-300 leading-relaxed">
@@ -88,7 +88,7 @@ export default function CaseStudiesPage() {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-navy-400 uppercase tracking-wide mb-2">
+                  <h4 className="text-sm font-semibold text-navy-400 mb-2">
                     Solution
                   </h4>
                   <p className="text-navy-300 leading-relaxed">
@@ -97,7 +97,7 @@ export default function CaseStudiesPage() {
                 </div>
 
                 <div>
-                  <h4 className="text-sm font-semibold text-brand-400 uppercase tracking-wide mb-2">
+                  <h4 className="text-sm font-semibold text-brand-400 mb-2">
                     Result
                   </h4>
                   <p className="text-white font-semibold leading-relaxed">
@@ -131,7 +131,7 @@ export default function CaseStudiesPage() {
       <section className="py-24 sm:py-32 bg-gradient-to-b from-navy-900 to-navy-950">
         <AnimatedSection>
           <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-8">
+            <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl mb-8">
               See how TerraCube can work for your portfolio
             </h2>
             <Link
