@@ -15,7 +15,7 @@ export default function PartnerLogos() {
     <section className="py-10 border-b border-white/5">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <p className="text-center text-xs uppercase tracking-[0.2em] text-navy-500 mb-8">
+          <p className="text-center text-xs text-navy-500 mb-8">
             Trusted by leading insurers and investors
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-16">

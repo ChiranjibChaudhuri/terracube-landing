@@ -6,7 +6,7 @@ export default function ProductPreview() {
   return (
     <div className="relative w-full max-w-lg mx-auto lg:mx-0">
       {/* Brand glow effect behind the card */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(65,182,196,0.2)_0%,rgba(46,154,173,0.1)_40%,transparent_70%)] blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--color-brand-500)_0%,var(--color-brand-600)_40%,transparent_70%)] opacity-20 blur-3xl pointer-events-none" />
 
       {/* Floating animated card */}
       <motion.div
@@ -35,8 +35,8 @@ export default function ProductPreview() {
           <div className="grid grid-cols-3 gap-3">
             {/* Combined Risk - amber */}
             <div className="rounded-lg bg-navy-900/60 border border-amber-500/20 p-3">
-              <div className="text-[10px] text-navy-400 uppercase tracking-wider mb-1">
-                Combined Risk
+              <div className="text-[10px] text-navy-400 mb-1">
+                Combined risk
               </div>
               <div className="text-2xl font-bold text-amber-400">52.3</div>
               <div className="flex items-center gap-1 mt-1">
@@ -49,8 +49,8 @@ export default function ProductPreview() {
 
             {/* High Risk - red */}
             <div className="rounded-lg bg-navy-900/60 border border-red-500/20 p-3">
-              <div className="text-[10px] text-navy-400 uppercase tracking-wider mb-1">
-                High Risk
+              <div className="text-[10px] text-navy-400 mb-1">
+                High risk
               </div>
               <div className="text-2xl font-bold text-red-400">5/18</div>
               <div className="text-[9px] text-navy-500 mt-1">properties</div>
@@ -58,8 +58,8 @@ export default function ProductPreview() {
 
             {/* Top Hazard - orange */}
             <div className="rounded-lg bg-navy-900/60 border border-orange-500/20 p-3">
-              <div className="text-[10px] text-navy-400 uppercase tracking-wider mb-1">
-                Top Hazard
+              <div className="text-[10px] text-navy-400 mb-1">
+                Top hazard
               </div>
               <div className="text-xs font-semibold text-orange-400 mt-1 leading-tight">
                 Flood<br />Precip
@@ -70,8 +70,8 @@ export default function ProductPreview() {
           {/* Mini time series chart - simulating 72h risk trend */}
           <div className="rounded-lg bg-navy-900/60 border border-white/5 p-4">
             <div className="flex items-center justify-between mb-3">
-              <span className="text-[10px] text-navy-400 uppercase tracking-wider">
-                Risk Trend (72h)
+              <span className="text-[10px] text-navy-400">
+                Risk trend (72h)
               </span>
               <div className="flex items-center gap-1.5">
                 <div className="w-2 h-2 rounded-full bg-brand-400 animate-pulse" />
@@ -95,14 +95,14 @@ export default function ProductPreview() {
               <polyline
                 points="0,55 40,52 80,48 120,50 160,45 200,42 240,38 280,35 320,30"
                 fill="none"
-                stroke="rgba(65,182,196,0.8)"
+                stroke="var(--color-brand-400)"
                 strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
 
               {/* Pulsing dot at end */}
-              <circle cx="320" cy="30" r="4" fill="rgba(65,182,196,1)">
+              <circle cx="320" cy="30" r="4" fill="var(--color-brand-400)">
                 <animate
                   attributeName="r"
                   values="4;6;4"
@@ -119,7 +119,7 @@ export default function ProductPreview() {
 
               <defs>
                 <linearGradient id="preview-gradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="rgba(65,182,196,0.6)" />
+                  <stop offset="0%" stopColor="var(--color-brand-400)" />
                   <stop offset="100%" stopColor="transparent" />
                 </linearGradient>
               </defs>

@@ -3,7 +3,7 @@
 export default function PipelineDiagram() {
   return (
     <div className="relative w-full max-w-md mx-auto lg:mx-0">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(65,182,196,0.1)_0%,transparent_70%)] blur-2xl pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--color-brand-500)_0%,transparent_70%)] opacity-10 blur-2xl pointer-events-none" />
 
       <svg
         viewBox="0 0 320 400"
