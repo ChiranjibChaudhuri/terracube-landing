@@ -88,10 +88,10 @@ export default function Home() {
             {/* Left: Text content */}
             <div className="text-center lg:text-left">
               <AnimatedSection>
-                <div className="text-xs uppercase tracking-[0.2em] text-brand-400 mb-4 font-semibold">
-                  Environmental Underwriting Platform
+                <div className="text-xs text-brand-400 mb-4 font-semibold">
+                  Environmental underwriting platform
                 </div>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold tracking-tight">
                   Quantify Climate Risk{" "}
                   <span className="gradient-text">Before You Invest</span>
                 </h1>
@@ -159,7 +159,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-6">
-              <h3 className="text-sm font-semibold text-brand-400 uppercase tracking-wider">
+              <h3 className="text-sm font-semibold text-brand-400">
                 Powered by world-class data
               </h3>
             </div>
@@ -322,7 +322,7 @@ export default function Home() {
                 <Link href="/use-cases" className="block h-full">
                   <div className="glass rounded-xl p-6 h-full hover:scale-[1.02] hover:glow-brand transition-all duration-300 border border-brand-500/10">
                     <div
-                      className="text-xs uppercase tracking-wider font-semibold mb-3"
+                      className="text-xs font-semibold mb-3"
                       style={{ color: useCase.color }}
                     >
                       {useCase.role}
