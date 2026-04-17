@@ -19,8 +19,6 @@ import {
   TreePine,
   Code,
 } from "lucide-react";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import AnimatedSection from "@/components/animated-section";
 import ProductPreview from "@/components/product-preview";
 import StatsCounter from "@/components/stats-counter";
@@ -75,8 +73,6 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
-
       {/* Hero */}
       <section id="main-content" className="relative flex items-center justify-center overflow-hidden pt-24 pb-20">
         {/* Animated gradient orb - max-w-full prevents mobile overflow */}
@@ -419,8 +415,6 @@ export default function Home() {
 
       {/* Newsletter */}
       <NewsletterSignup />
-
-      <Footer />
     </>
   );
 }

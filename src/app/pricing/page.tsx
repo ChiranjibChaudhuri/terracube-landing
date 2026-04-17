@@ -3,8 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import AnimatedSection from "@/components/animated-section";
 import { UsageCalculator } from "@/components/usage-calculator";
 import { PRICING_MODEL, SERVICE_PRICING, PRICING_FAQ } from "@/lib/constants";
@@ -14,8 +12,6 @@ export default function PricingPage() {
 
   return (
     <>
-      <Navbar />
-
       {/* Hero */}
       <section className="pt-32 pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
@@ -217,8 +213,6 @@ export default function PricingPage() {
           </AnimatedSection>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

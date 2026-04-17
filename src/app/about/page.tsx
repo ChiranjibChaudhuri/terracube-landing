@@ -4,8 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Globe, Cpu, Satellite, ArrowRight, Target, TrendingUp, Users } from "lucide-react";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import AnimatedSection from "@/components/animated-section";
 import { DATA_SOURCES } from "@/lib/constants";
 
@@ -102,8 +100,6 @@ export default function AboutPage() {
 
   return (
     <>
-      <Navbar />
-
       {/* Hero */}
       <section className="pt-32 pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
@@ -378,8 +374,6 @@ export default function AboutPage() {
           </AnimatedSection>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

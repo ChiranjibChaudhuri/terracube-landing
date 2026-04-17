@@ -18,8 +18,6 @@ import {
   TreePine,
   TrendingUp,
 } from "lucide-react";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import AnimatedSection from "@/components/animated-section";
 import { MARKETPLACE_SERVICES, SERVICE_PRICING } from "@/lib/constants";
 
@@ -134,8 +132,6 @@ export default function MarketplacePage() {
 
   return (
     <>
-      <Navbar />
-
       {/* Hero */}
       <section className="pt-32 pb-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
@@ -279,8 +275,6 @@ export default function MarketplacePage() {
           </AnimatedSection>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

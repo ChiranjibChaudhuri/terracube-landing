@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Instrument_Serif } from "next/font/google";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -133,7 +135,9 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        {children}
+        <Navbar />
+        <main id="main-content">{children}</main>
+        <Footer />
       </body>
     </html>
   );

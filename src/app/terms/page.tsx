@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import { BRAND_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -11,7 +9,6 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <>
-      <Navbar />
       <main id="main-content" className="min-h-screen pt-24 pb-16">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h1 className="font-display text-4xl font-bold tracking-tight text-white">
@@ -133,7 +130,6 @@ export default function TermsPage() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
